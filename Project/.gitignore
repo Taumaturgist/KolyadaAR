@@ -59,6 +59,9 @@ sysinfo.txt
 **/EditorUserSettings.asset
 **/Layouts
 **/.idea
+**/ARFoundationRemoteCompanionApp
+**/Assets/XR**
+**/Plugins/ARFoundationRemoteInstaller**
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -68,3 +71,4 @@ fmod_editor.log
 fmod_editor.log
 *.log
 *.log
+ARFoundationRemoteInstaller
