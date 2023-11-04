@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ArMaskTest.unity
     guid: 70aabb2f7b0387f4db5ed415ab930b5c
   m_configObjects:
-    AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: e62b10d931b21e14886bf7925f3268e4,
+    AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: c5f2212a0c9440c428ab044afbc7a48a,
       type: 2}
-    AR Foundation RemoteARFoundationRemoteSessionRecordsData: {fileID: 11400000, guid: 57079fca46dbf604cbefc8e22785e8cf,
+    AR Foundation RemoteARFoundationRemoteSessionRecordsData: {fileID: 11400000, guid: 75b85b70df145d743af0f5892e982853,
       type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
