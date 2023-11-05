@@ -71,8 +71,8 @@ MonoBehaviour:
     overrideDisplayMatrix: 0
     displayMatrix:
       e00: 0
-      e01: 1
-      e02: 0
+      e01: -1
+      e02: 1
       e03: 0
       e10: -0.79999995
       e11: 0
@@ -88,13 +88,13 @@ MonoBehaviour:
       e33: 0
     overrideProjectionMatrix: 0
     projectionMatrix:
-      e00: 3.1713035
-      e01: 0
-      e02: 0.071113
-      e03: 0
+      e00: -3.3987205
+      e01: -0
+      e02: -0.0043734387
+      e03: -0
       e10: 0
-      e11: 1.4270866
-      e12: -0.009610934
+      e11: 1.5294241
+      e12: 0.00577401
       e13: 0
       e20: 0
       e21: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
       e31: 0
       e32: -1
       e33: 0
-    checkPackageVersions: 1
+    checkPackageVersions: 0
     unityVersionsWithIssuePluginEventFix:
     - 2019.4.37
     - 2020.3.30
