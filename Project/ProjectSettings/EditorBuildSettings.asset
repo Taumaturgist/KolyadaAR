@@ -5,14 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/BlankAR.unity
+    guid: 6bdce89659816455b9f906fc62d19910
   - enabled: 1
-    path: Assets/Scenes/ArMaskTest.unity
-    guid: 70aabb2f7b0387f4db5ed415ab930b5c
+    path: Assets/Scenes/Sandbox.unity
+    guid: 0ae0973a67cdf134897508c1bd95b569
   m_configObjects:
-    AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: c5f2212a0c9440c428ab044afbc7a48a,
-      type: 2}
-    AR Foundation RemoteARFoundationRemoteSessionRecordsData: {fileID: 11400000, guid: 75b85b70df145d743af0f5892e982853,
-      type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 89a6d18d3df8d3e4fa917b0f9a963bc0,
