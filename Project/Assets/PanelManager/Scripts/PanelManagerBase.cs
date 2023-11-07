@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using PanelManager.PanelAnimations;
-using Project.Scripts.AppAnalytics;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 namespace BurningKnight.PanelManager
 {
