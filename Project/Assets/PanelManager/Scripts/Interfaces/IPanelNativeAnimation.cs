@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BurningKnight.PanelManager
+namespace PanelManager.Scripts.Interfaces
 {
     public interface IPanelNativeAnimation
     {

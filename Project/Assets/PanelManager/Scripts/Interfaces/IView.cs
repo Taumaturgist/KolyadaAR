@@ -1,6 +1,7 @@
-﻿using UniRx;
+﻿using PanelManager.Scripts.Panels;
+using UniRx;
 
-namespace BurningKnight.PanelManager
+namespace PanelManager.Scripts.Interfaces
 {
     public interface IView
     {

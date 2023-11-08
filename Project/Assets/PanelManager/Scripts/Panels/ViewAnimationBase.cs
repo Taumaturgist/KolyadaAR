@@ -1,5 +1,5 @@
 ﻿using System;
-using BurningKnight.PanelManager;
+using PanelManager.Scripts.Panels;
 using UnityEngine;
 
 namespace PanelManager.PanelAnimations

@@ -1,4 +1,4 @@
-﻿namespace BurningKnight.PanelManager
+﻿namespace PanelManager.Scripts.Interfaces
 {
     public interface IAcceptArg<in T>
     {

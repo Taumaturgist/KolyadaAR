@@ -1,6 +1,6 @@
 ﻿using System;
-using BurningKnight.PanelManager;
 using DG.Tweening;
+using PanelManager.Scripts.Interfaces;
 using UnityEngine;
 
 namespace PanelManager.PanelAnimations

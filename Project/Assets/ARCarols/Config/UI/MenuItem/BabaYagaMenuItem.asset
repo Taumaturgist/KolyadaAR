@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0bee2b276d7604cb4a9b04da699ac5, type: 3}
+  m_Name: BabaYagaMenuItem
+  m_EditorClassIdentifier: 
+  _name: 
+  _description: 
+  _iconPrefab: {fileID: 0}
+  _panelForNavigate: {fileID: 987712697496601153, guid: 19f1d9b13505aec488534159bd19afc5,
+    type: 3}
+  _characterConfig: {fileID: 11400000, guid: 4fe7150d60199ee4699615545019177c, type: 2}
