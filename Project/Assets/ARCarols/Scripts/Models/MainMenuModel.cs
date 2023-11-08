@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ARCarols.Scripts.Character;
 using ARCarols.Scripts.UI.Configs;
 using ARCarols.Scripts.UI.Configs.Base;
 using PanelManager.Scripts.Interfaces;
@@ -12,10 +13,14 @@ namespace ARCarols.Scripts.Models
 
         private MenuItemsConfig _menuItemsConfig;
 
+        private CurrentCharacterContainer _characterContainer;
+
         private MenuItemBase _currentItem;
 
-        public MainMenuModel(MenuItemsConfig menuItemsConfig)
+        public MainMenuModel(MenuItemsConfig menuItemsConfig, CurrentCharacterContainer characterContainer)
         {
+            _characterContainer = characterContainer;
+            
             _menuItemsConfig = menuItemsConfig;
         }
 
@@ -26,9 +31,10 @@ namespace ARCarols.Scripts.Models
 
         public IView GetNextPanel()
         {
-            if (_currentItem is CharacterMenuItem)
+            //Set Current Character
+            if (_currentItem is CharacterMenuItem item)
             {
-                //Засетить префаб для отображения в AR
+                _characterContainer.SetCurrentCharacterConfig(item.CharacterConfig);
             }
 
             return _currentItem.NextPanel;

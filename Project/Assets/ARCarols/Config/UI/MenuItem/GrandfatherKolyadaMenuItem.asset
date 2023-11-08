@@ -15,6 +15,6 @@ MonoBehaviour:
   _name: 
   _description: 
   _iconPrefab: {fileID: 0}
-  _panelForNavigate: {fileID: 987712697496601153, guid: 19f1d9b13505aec488534159bd19afc5,
+  nextPanelForNavigate: {fileID: 987712697496601153, guid: 19f1d9b13505aec488534159bd19afc5,
     type: 3}
   _characterConfig: {fileID: 11400000, guid: c9440949514eb844280117c4ca885a71, type: 2}

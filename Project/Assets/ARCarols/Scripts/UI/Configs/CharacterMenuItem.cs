@@ -14,6 +14,8 @@ namespace ARCarols.Scripts.UI.Configs
         public override string Description => _characterConfig.Description;
 
         public override GameObject IconPrefab => _characterConfig.IconPrefab.gameObject;
-        
+
+        public CharacterConfig CharacterConfig => _characterConfig;
+
     }
 }

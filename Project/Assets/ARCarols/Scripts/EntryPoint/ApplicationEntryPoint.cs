@@ -1,4 +1,5 @@
 using System;
+using ARCarols.Scripts.Character;
 using ARCarols.Scripts.Models;
 using ARCarols.Scripts.Presenters;
 using ARCarols.Scripts.UI;
@@ -20,9 +21,13 @@ namespace EntryPoint
 
         [SerializeField] private MainPanelManager _mainPanelManager;
 
+        private CurrentCharacterContainer _characterContainer; 
+
         private void Awake()
         {
             Application.targetFrameRate = 60;
+
+            _characterContainer = new CurrentCharacterContainer();
             
             _mainPanelManager.Init();
 
@@ -36,16 +41,27 @@ namespace EntryPoint
 
         private void InitModule()
         {
+            InitMonologueModule();
+            
             InitMainMenuModule();
         }
 
         private void InitMainMenuModule()
         {
-            var mainMenuModel = new MainMenuModel(_menuItemsConfig);
+            var mainMenuModel = new MainMenuModel(_menuItemsConfig, _characterContainer);
 
             var view = _mainPanelManager.SudoGetPanel<MenuView>();
 
             var mainMenuPresenter = new MainMenuPresenter(mainMenuModel, view);
+        }
+
+        private void InitMonologueModule()
+        { 
+            var monologueModel = new MonologueModel(_characterContainer);
+            
+            var view = _mainPanelManager.SudoGetPanel<CharacterMonologueView>();
+
+            var monologuePresenter = new MonologuePresenter(monologueModel, view);
         }
     }
 }
