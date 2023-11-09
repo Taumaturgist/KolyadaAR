@@ -10,22 +10,22 @@ namespace Ar
 
         [SerializeField] private GameObject _origin;
 
-        public void ChangeMask(MaskData maskData = null)
+        public void ChangeMask(GameObject maskPrefab = null)
         {
             ClearMask();
 
             _arFaceManager = _origin.AddComponent<ARFaceManager>();
             
-            _arFaceManager.facePrefab =maskData == null ? null: maskData.Prefab;
+            _arFaceManager.facePrefab =maskPrefab == null ? null: maskPrefab;
         }
         
-        public void ChangeSelfie(GameObject character = null)
+        public void ChangeSelfie(GameObject selfiePrefab = null)
         {
             ClearMask();
 
             _arFaceManager = _origin.AddComponent<ARFaceManager>();
             
-            _arFaceManager.facePrefab = character == null ? null: character;
+            _arFaceManager.facePrefab = selfiePrefab == null ? null: selfiePrefab;
         }
 
         private void ClearMask()

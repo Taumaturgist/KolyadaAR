@@ -12,9 +12,9 @@ public class CharacterArView : MonoBehaviour
         _textComponent.text = text ?? "";
     }
 
-    public void SetCharacter()
+    public void SetCharacterSprite(Sprite sprite)
     {
-        
+        _image.sprite = sprite;
     }
     
 }

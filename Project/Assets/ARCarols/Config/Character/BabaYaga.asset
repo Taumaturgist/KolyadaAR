@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: "\u0411\u0430\u0431\u0430 \u042F\u0433\u0430"
   _description: 
-  _characterPrefab: {fileID: 1539105758530814733, guid: a5aaa574afa43ea41a84f7c4e23b353e,
+  _characterPrefab: {fileID: 1539105758530814733, guid: f39a71794137bb049bcd94b15138bfce,
     type: 3}
   _characterTextConfig: {fileID: 11400000, guid: 36b6095ef08886e47a3dc19cf92563ed,
     type: 2}
   _panelForCharacterEvent: {fileID: 0}
+  _characterArView: {fileID: 3330927305302710991, guid: f39a71794137bb049bcd94b15138bfce,
+    type: 3}

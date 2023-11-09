@@ -8,21 +8,23 @@ namespace Ar
 {
     public class CharacterPlaceOnSpace : MonoBehaviour
     {
-        public GameObject AnchorPrefab
+        public CharacterArView AnchorPrefab
         {
             get => _anchorPrefab;
             set => _anchorPrefab = value;
         }
 
-        [SerializeField] GameObject _anchorPrefab;
-        
+        public CharacterArView CurrentCharacterOnScene => _currentCharacter;
+
         [SerializeField] private ARRaycastManager _raycastManager;
-
-        private List<GameObject> _characters = new();
-
+        
+        private CharacterArView _anchorPrefab;
+        
         private static List<ARRaycastHit> s_Hits = new();
 
         private const float SPAWN_OFFSET = 5f;
+
+        private CharacterArView _currentCharacter;
         
 
         private void OnEnable()
@@ -32,15 +34,8 @@ namespace Ar
 
         private void OnDisable()
         {
-            if (_characters == null || _characters.Count == 0)
-            {
-                return;
-            }
-            foreach (var character in _characters)
-            {
-                Destroy(character.gameObject);
-            }
-            _characters.Clear();
+            Destroy(_currentCharacter.gameObject);
+            _currentCharacter = null;
         }
 
         private IEnumerator SpawnCharacterCoroutine()
@@ -52,10 +47,9 @@ namespace Ar
 
             var hitPose = s_Hits[0].pose;
 
-           var character = Instantiate(_anchorPrefab,
+            _currentCharacter = Instantiate(_anchorPrefab,
                 new Vector3(hitPose.position.x, hitPose.position.y, hitPose.position.z + SPAWN_OFFSET),
                 Quaternion.identity);
-           _characters.Add(character);
         }
     }
 }

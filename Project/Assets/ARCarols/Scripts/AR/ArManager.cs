@@ -1,4 +1,4 @@
-using System.Collections;
+using ARCarols.Scripts.Character.Config;
 using UnityEngine;
 
 namespace Ar
@@ -9,15 +9,7 @@ namespace Ar
         [SerializeField] private CharacterPlaceOnSpace _characterPlaceOnSpace;
         [SerializeField] private GameObject _componentsCharacter;
         [SerializeField] private GameObject _componentsFace;
-        [SerializeField] private MaskData _testMaskData;
-        [SerializeField] private GameObject _testSelfie;
-
-
-        private void Start()
-        {
-            StartCoroutine(Test());
-        }
-
+        
         public void ChangeArState(ArState arState)
         {
             switch (arState)
@@ -29,12 +21,10 @@ namespace Ar
                 case ArState.MaskState:
                     _componentsCharacter.SetActive(false);
                     _componentsFace.SetActive(true);
-                    SetMask(_testMaskData);
                     break;
                 case ArState.SelfieState:
                     _componentsCharacter.SetActive(false);
                     _componentsFace.SetActive(true);
-                    SetSelfie(_testSelfie);
                     break;
                 case ArState.CharacterState:
                     _componentsFace.SetActive(false);
@@ -43,25 +33,24 @@ namespace Ar
             }
         }
 
-        public void SetMask(MaskData maskData)
+        public void SetMask(MaskData mask = null)
         {
-            _arFaceTrackingManager.ChangeMask(maskData);
+            _arFaceTrackingManager.ChangeMask(mask == null ? null : mask.Prefab);
         }
 
-        public void SetSelfie(GameObject character)
+        public void SetSelfie(MaskData mask = null)
         {
-            _arFaceTrackingManager.ChangeSelfie(character);
+            _arFaceTrackingManager.ChangeSelfie(mask == null ? null : mask.Prefab);
+        }
+        
+        public void SetCharacterPrefab(CharacterConfig character)
+        {
+            _characterPlaceOnSpace.AnchorPrefab = character.CharacterArView;
         }
 
-        private IEnumerator Test()
+        public CharacterArView GetCurrentCharacter()
         {
-            ChangeArState(ArState.Off);
-            yield return new WaitForSeconds(1f);
-            ChangeArState(ArState.MaskState);
-            yield return new WaitForSeconds(10f);
-            ChangeArState(ArState.CharacterState);
-            yield return new WaitForSeconds(10f);
-            ChangeArState(ArState.SelfieState);
+            return _characterPlaceOnSpace.CurrentCharacterOnScene;
         }
     }
 }

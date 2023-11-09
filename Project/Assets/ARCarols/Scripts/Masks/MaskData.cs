@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MaskData", menuName = "Data/MaskData")]
+[CreateAssetMenu(fileName = "MaskData", menuName = "Project/Character/MaskData")]
 public class MaskData : ScriptableObject
 {
     public GameObject Prefab => _prefab;
