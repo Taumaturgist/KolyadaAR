@@ -29,6 +29,8 @@ namespace ARCarols.Scripts.Models
             _characterContainer = characterContainer;
 
             _arManager = arManager;
+            
+            _arManager.OnCharacterSpawn += SetCharacterOnScene;
         }
 
         public void RefreshData()
@@ -41,8 +43,7 @@ namespace ARCarols.Scripts.Models
             _currentMonologueIndex = 0;
 
             CurrentMonologueIndex = new IntReactiveProperty(_currentMonologueIndex);
-
-            _arManager.OnCharacterSpawn += SetCharacterOnScene;
+            
         }
 
         public void SetNextMonologue()
@@ -62,6 +63,8 @@ namespace ARCarols.Scripts.Models
 
         private void SetCharacterOnScene(CharacterAnimationController characterAnimationController)
         {
+            Debug.Log("SetCharacterOnScene");
+            
             _characterAnimationController = characterAnimationController;
             
             SetMonologueOnScene();

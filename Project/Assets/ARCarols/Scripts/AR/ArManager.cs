@@ -7,19 +7,20 @@ namespace Ar
 {
     public class ArManager : MonoBehaviour
     {
-        public event Action<CharacterAnimationController> OnCharacterSpawn; 
-        
+        public Action<CharacterAnimationController> OnCharacterSpawn
+        {
+            get => _characterPlaceOnSpace.OnCharacterSpawn;
+            set => _characterPlaceOnSpace.OnCharacterSpawn += value;
+        }
+
         [SerializeField] private ArFaceTrackingManager _arFaceTrackingManager;
+
         [SerializeField] private CharacterPlaceOnSpace _characterPlaceOnSpace;
+
         [SerializeField] private GameObject _componentsCharacter;
+
         [SerializeField] private GameObject _componentsFace;
 
-
-        public void Init()
-        {
-            _characterPlaceOnSpace.OnCharacterSpawn = OnCharacterSpawn;
-        }
-        
         public ArManager ChangeArState(ArState arState)
         {
             switch (arState)

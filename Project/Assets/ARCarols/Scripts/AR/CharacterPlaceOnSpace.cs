@@ -21,7 +21,8 @@ namespace Ar
         public CharacterAnimationController CurrentCharacterOnScene => _currentCharacter;
 
         [SerializeField] private ARRaycastManager _raycastManager;
-        
+
+
         private CharacterAnimationController _anchorPrefab;
         
         private static List<ARRaycastHit> s_Hits = new();
@@ -44,6 +45,7 @@ namespace Ar
             
             _currentCharacter = null;
         }
+        
 
         private IEnumerator SpawnCharacterCoroutine()
         {
@@ -58,7 +60,9 @@ namespace Ar
                 new Vector3(hitPose.position.x, hitPose.position.y, hitPose.position.z + SPAWN_OFFSET),
                 Quaternion.identity);
             
-            OnCharacterSpawn.Invoke(_currentCharacter);
+            OnCharacterSpawn?.Invoke(_currentCharacter);
         }
+        
+        
     }
 }
