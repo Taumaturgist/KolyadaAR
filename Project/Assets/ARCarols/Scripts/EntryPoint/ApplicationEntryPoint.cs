@@ -65,5 +65,14 @@ namespace EntryPoint
 
             var monologuePresenter = new MonologuePresenter(monologueModel, view);
         }
+
+        private void InitCharacterActionsModule()
+        {
+            var characterActionsModel = new CharacterActionsModel(_arManager);
+
+            var view = _mainPanelManager.SudoGetPanel<CharacterActionsView>();
+
+            var characterActionsPresenter = new CharacterActionsPresenter(characterActionsModel, view);
+        }
     }
 }

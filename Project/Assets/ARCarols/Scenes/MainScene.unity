@@ -1356,11 +1356,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterActionsView
       objectReference: {fileID: 0}
-    - target: {fileID: 3919701676793271021, guid: 68114f7b162f0be4aa8ca2fd293a994d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4406601245298413500, guid: 68114f7b162f0be4aa8ca2fd293a994d,
         type: 3}
       propertyPath: m_Pivot.x

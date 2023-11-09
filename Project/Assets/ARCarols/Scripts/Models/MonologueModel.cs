@@ -43,7 +43,7 @@ namespace ARCarols.Scripts.Models
             _currentMonologueIndex = 0;
 
             CurrentMonologueIndex = new IntReactiveProperty(_currentMonologueIndex);
-            
+
         }
 
         public void SetNextMonologue()
