@@ -19,7 +19,7 @@ MonoBehaviour:
       syncCameraPoseWithVideo: 1
       resolutionScale: 0.65
       quality: 95
-      maxVideoFps: 15
+      maxVideoFps: 30
       maxCpuImagesFps: 15
       maxCameraIntrinsicsFps: 1
     occlusionSettings:
