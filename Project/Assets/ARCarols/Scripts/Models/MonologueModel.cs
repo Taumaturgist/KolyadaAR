@@ -36,14 +36,13 @@ namespace ARCarols.Scripts.Models
             _currentCharacterConfig = _characterContainer.CharacterConfig;
 
             _arManager.SetCharacterPrefab(_currentCharacterConfig)
-                .ChangeArState(ArState.CharacterState)
-                .GetCurrentCharacter();
+                .ChangeArState(ArState.CharacterState);
 
             _currentMonologueIndex = 0;
 
             CurrentMonologueIndex = new IntReactiveProperty(_currentMonologueIndex);
 
-            SetMonologueOnScene();
+            _arManager.OnCharacterSpawn += SetCharacterOnScene;
         }
 
         public void SetNextMonologue()
@@ -60,8 +59,22 @@ namespace ARCarols.Scripts.Models
             SetMonologueOnScene();
         }
 
+
+        private void SetCharacterOnScene(CharacterAnimationController characterAnimationController)
+        {
+            _characterAnimationController = characterAnimationController;
+            
+            SetMonologueOnScene();
+        }
+
         private void SetMonologueOnScene()
         {
+            if (_characterAnimationController == null)
+            {
+                Debug.LogError("No Character On AR Scene");
+                return;
+            }
+            
             if (_currentCharacterConfig.CharacterTextConfig.TextList.Count == _currentMonologueIndex)
             {
                 OnEndMonologue.Execute();

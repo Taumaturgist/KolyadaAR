@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using ARCarols.Scripts.Character;
@@ -9,6 +10,8 @@ namespace Ar
 {
     public class CharacterPlaceOnSpace : MonoBehaviour
     {
+        public Action<CharacterAnimationController> OnCharacterSpawn;
+
         public CharacterAnimationController AnchorPrefab
         {
             get => _anchorPrefab;
@@ -54,6 +57,8 @@ namespace Ar
             _currentCharacter = Instantiate(_anchorPrefab,
                 new Vector3(hitPose.position.x, hitPose.position.y, hitPose.position.z + SPAWN_OFFSET),
                 Quaternion.identity);
+            
+            OnCharacterSpawn.Invoke(_currentCharacter);
         }
     }
 }

@@ -32,6 +32,8 @@ namespace EntryPoint
             _characterContainer = new CurrentCharacterContainer();
             
             _mainPanelManager.Init();
+            
+            _arManager.Init();
 
             InitModule();
         }
