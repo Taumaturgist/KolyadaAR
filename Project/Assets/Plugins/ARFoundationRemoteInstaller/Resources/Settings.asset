@@ -43,19 +43,16 @@ MonoBehaviour:
     version: 2.0.27-release.0
     id: com.kyrylokuzyk.arfoundationremote
   - displayName: AR Foundation
-    version: 5.0.2
+    version: 5.0.7
     id: com.unity.xr.arfoundation
   - displayName: Google ARCore XR Plugin
-    version: 5.0.2
+    version: 5.0.7
     id: com.unity.xr.arcore
   - displayName: Apple ARKit XR Plugin
-    version: 5.0.2
+    version: 5.0.4
     id: com.unity.xr.arkit
-  - displayName: ARCore Extensions + AR Foundation Remote
-    version: 1.34.0
-    id: com.kyrylokuzyk.arfoundationremote.arcoreextensions
   - displayName: Input System
-    version: 1.4.4
+    version: 1.5.0
     id: com.unity.inputsystem
   - displayName: AR Subsystems
     version: 5.0.2

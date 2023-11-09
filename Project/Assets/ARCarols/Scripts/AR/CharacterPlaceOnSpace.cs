@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ARCarols.Scripts.Character;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -8,23 +9,23 @@ namespace Ar
 {
     public class CharacterPlaceOnSpace : MonoBehaviour
     {
-        public CharacterArView AnchorPrefab
+        public CharacterAnimationController AnchorPrefab
         {
             get => _anchorPrefab;
             set => _anchorPrefab = value;
         }
 
-        public CharacterArView CurrentCharacterOnScene => _currentCharacter;
+        public CharacterAnimationController CurrentCharacterOnScene => _currentCharacter;
 
         [SerializeField] private ARRaycastManager _raycastManager;
         
-        private CharacterArView _anchorPrefab;
+        private CharacterAnimationController _anchorPrefab;
         
         private static List<ARRaycastHit> s_Hits = new();
 
         private const float SPAWN_OFFSET = 5f;
 
-        private CharacterArView _currentCharacter;
+        private CharacterAnimationController _currentCharacter;
         
 
         private void OnEnable()
@@ -34,7 +35,10 @@ namespace Ar
 
         private void OnDisable()
         {
+            if (_currentCharacter == null) return;
+            
             Destroy(_currentCharacter.gameObject);
+            
             _currentCharacter = null;
         }
 

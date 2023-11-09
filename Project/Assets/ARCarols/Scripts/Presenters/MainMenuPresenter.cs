@@ -16,6 +16,8 @@ namespace ARCarols.Scripts.Presenters
         {
             base.ViewOpened();
 
+            _model.ChangeArState();
+
             for (int i = 0; i < _model.MenuItems.Count; i++)
             {
                 var data = _model.MenuItems[i];

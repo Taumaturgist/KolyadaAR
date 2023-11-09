@@ -16,11 +16,7 @@ namespace ARCarols.Scripts.Character.Config
         [SerializeField] private CharacterTextConfig _characterTextConfig;
 
         [SerializeField] private ViewBase _panelForCharacterEvent;
-
-        [SerializeField] private CharacterArView _characterArView;
-
-
-        public CharacterArView CharacterArView => _characterArView;
+        
         public string Name => _name;
 
         public string Description => _description;

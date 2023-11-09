@@ -1,19 +1,18 @@
+using TMPro;
 using UnityEngine;
 
 namespace ARCarols.Scripts.Character
 {
     public class CharacterAnimationController : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [SerializeField] private TMP_Text _textComponent;
 
-        // Update is called once per frame
-        void Update()
+        [SerializeField] private GameObject _textCharacter;
+        public void SetText(string text)
         {
-        
+            _textCharacter.gameObject.SetActive(!string.IsNullOrEmpty(text));
+
+            _textComponent.text = text ?? "";
         }
     }
 }

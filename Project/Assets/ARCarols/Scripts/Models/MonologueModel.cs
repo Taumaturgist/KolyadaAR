@@ -1,4 +1,5 @@
-﻿using ARCarols.Scripts.Character;
+﻿using Ar;
+using ARCarols.Scripts.Character;
 using ARCarols.Scripts.Character.Config;
 using Project.Scripts.Models.Base;
 using UniRx;
@@ -6,32 +7,40 @@ using UnityEngine;
 
 namespace ARCarols.Scripts.Models
 {
-    public class MonologueModel: ModelBase
+    public class MonologueModel : ModelBase
     {
         public IntReactiveProperty CurrentMonologueIndex;
 
         public ReactiveCommand OnEndMonologue = new();
-        
+
         private CharacterConfig _currentCharacterConfig;
 
         private CurrentCharacterContainer _characterContainer;
 
+        private ArManager _arManager;
+
+        private CharacterAnimationController _characterAnimationController;
+
         private int _currentMonologueIndex = 0;
-        
-        
-        public MonologueModel(CurrentCharacterContainer characterContainer)
+
+
+        public MonologueModel(CurrentCharacterContainer characterContainer, ArManager arManager)
         {
             _characterContainer = characterContainer;
 
-            //Нужно засетить AR manager
+            _arManager = arManager;
         }
-        
+
         public void RefreshData()
         {
             _currentCharacterConfig = _characterContainer.CharacterConfig;
-            
+
+            _arManager.SetCharacterPrefab(_currentCharacterConfig)
+                .ChangeArState(ArState.CharacterState)
+                .GetCurrentCharacter();
+
             _currentMonologueIndex = 0;
-            
+
             CurrentMonologueIndex = new IntReactiveProperty(_currentMonologueIndex);
 
             SetMonologueOnScene();
@@ -43,7 +52,7 @@ namespace ARCarols.Scripts.Models
 
             SetMonologueOnScene();
         }
-        
+
         public void SetPreviousMonologue()
         {
             _currentMonologueIndex--;
@@ -58,14 +67,14 @@ namespace ARCarols.Scripts.Models
                 OnEndMonologue.Execute();
                 return;
             }
-            
+
             string textMonologue = _currentCharacterConfig.CharacterTextConfig.TextList[_currentMonologueIndex];
-            
+
             Debug.Log("textMonologue: " + textMonologue);
-            
+
             CurrentMonologueIndex.Value = _currentMonologueIndex;
 
-            //Вызываем смену диалога AR
+            _characterAnimationController.SetText(textMonologue);
         }
     }
 }

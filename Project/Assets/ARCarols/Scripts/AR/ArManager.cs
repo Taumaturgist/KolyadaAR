@@ -1,3 +1,4 @@
+using ARCarols.Scripts.Character;
 using ARCarols.Scripts.Character.Config;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace Ar
         [SerializeField] private GameObject _componentsCharacter;
         [SerializeField] private GameObject _componentsFace;
         
-        public void ChangeArState(ArState arState)
+        public ArManager ChangeArState(ArState arState)
         {
             switch (arState)
             {
@@ -31,6 +32,8 @@ namespace Ar
                     _componentsCharacter.SetActive(true);
                     break;
             }
+
+            return this;
         }
 
         public void SetMask(MaskData mask = null)
@@ -43,12 +46,13 @@ namespace Ar
             _arFaceTrackingManager.ChangeSelfie(mask == null ? null : mask.Prefab);
         }
         
-        public void SetCharacterPrefab(CharacterConfig character)
+        public ArManager SetCharacterPrefab(CharacterConfig character)
         {
-            _characterPlaceOnSpace.AnchorPrefab = character.CharacterArView;
+            _characterPlaceOnSpace.AnchorPrefab = character.IconPrefab;
+            return this;
         }
 
-        public CharacterArView GetCurrentCharacter()
+        public CharacterAnimationController GetCurrentCharacter()
         {
             return _characterPlaceOnSpace.CurrentCharacterOnScene;
         }

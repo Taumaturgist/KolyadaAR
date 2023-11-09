@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Ar;
 using ARCarols.Scripts.Character;
 using ARCarols.Scripts.UI.Configs;
 using ARCarols.Scripts.UI.Configs.Base;
@@ -16,14 +17,23 @@ namespace ARCarols.Scripts.Models
         private CurrentCharacterContainer _characterContainer;
 
         private MenuItemBase _currentItem;
+        
+        private ArManager _arManager;
 
-        public MainMenuModel(MenuItemsConfig menuItemsConfig, CurrentCharacterContainer characterContainer)
+        public MainMenuModel(MenuItemsConfig menuItemsConfig, CurrentCharacterContainer characterContainer, ArManager arManager)
         {
             _characterContainer = characterContainer;
             
             _menuItemsConfig = menuItemsConfig;
+
+            _arManager = arManager;
         }
 
+        public void ChangeArState()
+        {
+            _arManager.ChangeArState(ArState.Off);
+        }
+        
         public void SetCurrentMenuItem(int index)
         {
             _currentItem = MenuItems[index];

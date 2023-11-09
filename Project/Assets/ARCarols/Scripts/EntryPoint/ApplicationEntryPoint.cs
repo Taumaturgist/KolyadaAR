@@ -1,4 +1,4 @@
-using System;
+using Ar;
 using ARCarols.Scripts.Character;
 using ARCarols.Scripts.Models;
 using ARCarols.Scripts.Presenters;
@@ -20,6 +20,8 @@ namespace EntryPoint
         [SerializeField] private ScreenshotManager _screenshotManager;
 
         [SerializeField] private MainPanelManager _mainPanelManager;
+
+        [SerializeField] private ArManager _arManager;
 
         private CurrentCharacterContainer _characterContainer; 
 
@@ -48,7 +50,7 @@ namespace EntryPoint
 
         private void InitMainMenuModule()
         {
-            var mainMenuModel = new MainMenuModel(_menuItemsConfig, _characterContainer);
+            var mainMenuModel = new MainMenuModel(_menuItemsConfig, _characterContainer, _arManager);
 
             var view = _mainPanelManager.SudoGetPanel<MenuView>();
 
@@ -57,7 +59,7 @@ namespace EntryPoint
 
         private void InitMonologueModule()
         { 
-            var monologueModel = new MonologueModel(_characterContainer);
+            var monologueModel = new MonologueModel(_characterContainer, _arManager);
             
             var view = _mainPanelManager.SudoGetPanel<CharacterMonologueView>();
 
