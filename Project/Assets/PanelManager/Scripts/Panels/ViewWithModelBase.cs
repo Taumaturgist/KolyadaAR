@@ -1,6 +1,7 @@
 ﻿using System;
+using PanelManager.Scripts.Interfaces;
 
-namespace BurningKnight.PanelManager
+namespace PanelManager.Scripts.Panels
 {
     public abstract class ViewWithModelBase : ViewBase
     {

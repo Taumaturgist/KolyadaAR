@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BurningKnight.PanelManager
+namespace PanelManager.Scripts.Interfaces
 {
     public interface IPanelAnimation
     {

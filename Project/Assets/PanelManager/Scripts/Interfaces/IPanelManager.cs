@@ -1,7 +1,7 @@
+using PanelManager.Scripts.Panels;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace BurningKnight.PanelManager
+namespace PanelManager.Scripts.Interfaces
 {
     public interface IPanelManager
     {

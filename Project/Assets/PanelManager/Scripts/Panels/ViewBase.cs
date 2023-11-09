@@ -1,8 +1,9 @@
 ﻿using System;
+using PanelManager.Scripts.Interfaces;
 using UniRx;
 using UnityEngine;
 
-namespace BurningKnight.PanelManager
+namespace PanelManager.Scripts.Panels
 {
     public abstract class ViewBase : MonoBehaviour, IView, IComparable<IView>
     {

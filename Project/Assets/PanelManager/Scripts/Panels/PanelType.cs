@@ -1,4 +1,4 @@
-﻿namespace BurningKnight.PanelManager
+﻿namespace PanelManager.Scripts.Panels
 {
     public enum PanelType
     {

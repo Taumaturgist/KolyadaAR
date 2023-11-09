@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using PanelManager.PanelAnimations;
+using PanelManager.Scripts.Interfaces;
+using PanelManager.Scripts.Panels;
 using UnityEngine;
 
-namespace BurningKnight.PanelManager
+namespace PanelManager.Scripts
 {
     public abstract class PanelManagerBase : MonoBehaviour, IPanelManager
     {

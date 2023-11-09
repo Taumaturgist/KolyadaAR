@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BurningKnight.PanelManager
+namespace PanelManager.Scripts
 {
     public class ReactiveProperty<T> : IDisposable
     {

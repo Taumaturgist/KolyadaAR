@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: d7b21873f7ca9d948a18169b5ec10513
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Oksana Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 763413215b8dce742994a0e3a57ad2a8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

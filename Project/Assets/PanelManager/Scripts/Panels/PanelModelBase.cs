@@ -1,4 +1,6 @@
-﻿namespace BurningKnight.PanelManager
+﻿using PanelManager.Scripts.Interfaces;
+
+namespace PanelManager.Scripts.Panels
 {
     public abstract class PanelModelBase
     {
