@@ -9,8 +9,12 @@ namespace ARCarols.Scripts.UI.Panels
 {
     public class MaskView : ViewBase
     {
-        [SerializeField] private TMP_Text _name;
+        [SerializeField] private Button _closeButton; 
+        
         [SerializeField] private Button _actionButton;
+        
+        [SerializeField] private TMP_Text _name;
+
     
         public Action<MaskData> OnClickButton;
 
@@ -21,6 +25,12 @@ namespace ARCarols.Scripts.UI.Panels
         private CompositeDisposable _disposable = new();
 
         private MaskData _maskData;
+
+        protected override void OnInitialize()
+        {
+            _closeButton.onClick.AddListener(() => _panelManager.OpenPanel<MenuView>());
+        }
+        
 
         public void Init(MaskData maskData)
         {
