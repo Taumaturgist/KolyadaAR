@@ -28,6 +28,8 @@ namespace ARCarols.Scripts.UI.Panels
 
         protected override void OnInitialize()
         {
+            base.OnInitialize();
+            
             _closeButton.onClick.AddListener(() => _panelManager.OpenPanel<MenuView>());
         }
         

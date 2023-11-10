@@ -24,6 +24,8 @@ namespace ARCarols.Scripts.UI.Panels
             _buttonClose.onClick.AddListener(() => _panelManager.OpenPanel<MenuView>());
             
             _moveToMonologue.onClick.AddListener(() => _panelManager.OpenPanel<CharacterMonologueView>());
+            
+            _moveToSelphie.onClick.AddListener(() => _panelManager.OpenPanel<SelfieView>());
         }
     }
 }

@@ -46,6 +46,10 @@ namespace EntryPoint
             InitMonologueModule();
             
             InitMainMenuModule();
+
+            InitCharacterActionsModule();
+
+            InitSelfieModule();
         }
 
         private void InitMainMenuModule()
@@ -68,11 +72,20 @@ namespace EntryPoint
 
         private void InitCharacterActionsModule()
         {
-            var characterActionsModel = new CharacterActionsModel(_arManager);
+            var characterActionsModel = new CharacterActionsModel(_arManager, _characterContainer);
 
             var view = _mainPanelManager.SudoGetPanel<CharacterActionsView>();
 
             var characterActionsPresenter = new CharacterActionsPresenter(characterActionsModel, view);
+        }
+
+        private void InitSelfieModule()
+        {
+            var selfieModel = new SelfieModel(_arManager, _screenshotManager);
+
+            var view = _mainPanelManager.SudoGetPanel<SelfieView>();
+
+            var selfiePresenter = new SelfiePresenters(selfieModel, view);
         }
     }
 }

@@ -1,4 +1,5 @@
 using Ar;
+using ARCarols.Scripts.Character;
 using Project.Scripts.Models.Base;
 
 namespace ARCarols.Scripts.Models
@@ -7,9 +8,13 @@ namespace ARCarols.Scripts.Models
     {
         private ArManager _arManager;
         
-        public CharacterActionsModel(ArManager arManager)
+        private CurrentCharacterContainer _characterContainer; 
+        
+        public CharacterActionsModel(ArManager arManager, CurrentCharacterContainer characterContainer)
         {
             _arManager = arManager;
+
+            _characterContainer = characterContainer;
         }
 
         public void CloseCharacterDialog()
