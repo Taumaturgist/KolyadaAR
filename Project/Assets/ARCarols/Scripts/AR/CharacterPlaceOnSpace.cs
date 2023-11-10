@@ -27,7 +27,7 @@ namespace Ar
         
         private static List<ARRaycastHit> s_Hits = new();
 
-        private const float SPAWN_OFFSET = 5f;
+        private const float SPAWN_OFFSET = 10f;
 
         private CharacterAnimationController _currentCharacter;
         

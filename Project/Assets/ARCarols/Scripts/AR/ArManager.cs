@@ -58,7 +58,7 @@ namespace Ar
         
         public ArManager SetCharacterPrefab(CharacterConfig character)
         {
-            _characterPlaceOnSpace.AnchorPrefab = character.IconPrefab;
+            _characterPlaceOnSpace.AnchorPrefab = character.CharacterPrefabAr;
             return this;
         }
 

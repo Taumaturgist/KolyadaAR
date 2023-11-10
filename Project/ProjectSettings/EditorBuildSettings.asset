@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/ARCarols/Scenes/BlankAR.unity
-    guid: 6bdce89659816455b9f906fc62d19910
   - enabled: 1
-    path: Assets/ARCarols/Scenes/Sandbox.unity
-    guid: 0ae0973a67cdf134897508c1bd95b569
+    path: Assets/ARCarols/Scenes/MainScene.unity
+    guid: aa1f0d7bbb2771542b90290ef04a47df
   m_configObjects:
     AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: c5f2212a0c9440c428ab044afbc7a48a,
       type: 2}

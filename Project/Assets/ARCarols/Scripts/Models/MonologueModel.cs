@@ -35,14 +35,21 @@ namespace ARCarols.Scripts.Models
 
         public void RefreshData()
         {
+            _currentMonologueIndex = 0;
+            
             _currentCharacterConfig = _characterContainer.CharacterConfig;
 
             _arManager.SetCharacterPrefab(_currentCharacterConfig)
                 .ChangeArState(ArState.CharacterState);
-
-            _currentMonologueIndex = 0;
-
+            
             CurrentMonologueIndex = new IntReactiveProperty(_currentMonologueIndex);
+
+            var characterAnimationController = _arManager.GetCurrentCharacter();
+
+            if (characterAnimationController != null)
+            {
+                SetMonologueOnScene();
+            }
 
         }
 
@@ -85,6 +92,7 @@ namespace ARCarols.Scripts.Models
             }
 
             string textMonologue = _currentCharacterConfig.CharacterTextConfig.TextList[_currentMonologueIndex];
+            
 
             Debug.Log("textMonologue: " + textMonologue);
 

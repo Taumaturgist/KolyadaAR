@@ -16,8 +16,8 @@ MonoBehaviour:
   _description: 
   _characterPrefab: {fileID: 1539105758530814733, guid: f39a71794137bb049bcd94b15138bfce,
     type: 3}
+  _characterPrefabAr: {fileID: 6249308708548829865, guid: 67c1120ed3736ee45a3633f9bd619178,
+    type: 3}
   _characterTextConfig: {fileID: 11400000, guid: 36b6095ef08886e47a3dc19cf92563ed,
     type: 2}
   _panelForCharacterEvent: {fileID: 0}
-  _characterArView: {fileID: 3330927305302710991, guid: f39a71794137bb049bcd94b15138bfce,
-    type: 3}
