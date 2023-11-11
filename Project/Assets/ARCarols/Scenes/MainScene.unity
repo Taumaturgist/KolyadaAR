@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuItemsConfig: {fileID: 11400000, guid: b9cf33c67d0456c4eb52c254e587e886, type: 2}
+  _maskListConfig: {fileID: 11400000, guid: cfb02a1e45b36b241b6ea25531289270, type: 2}
   _screenshotManager: {fileID: 1152588013}
   _mainPanelManager: {fileID: 1625239066}
   _arManager: {fileID: 897968184}

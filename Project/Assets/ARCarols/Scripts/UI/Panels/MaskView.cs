@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using ARCarols.Scripts.UI.Component;
+using DanielLochner.Assets.SimpleScrollSnap;
 using PanelManager.Scripts.Panels;
 using TMPro;
 using UniRx;
@@ -9,44 +12,81 @@ namespace ARCarols.Scripts.UI.Panels
 {
     public class MaskView : ViewBase
     {
-        [SerializeField] private Button _closeButton; 
-        
-        [SerializeField] private Button _actionButton;
-        
-        [SerializeField] private TMP_Text _name;
+        [SerializeField] private Button _closeButton;
 
-    
-        public Action<MaskData> OnClickButton;
+        [SerializeField] private TMP_Text _nameMask;
 
+        [SerializeField] private MaskViewItem _maskViewItemPrefab;
+
+        [SerializeField] private SimpleScrollSnap _simpleScrollSnap;
+
+        [SerializeField] private Transform _spawnViewSpawnPoint;
+
+        [SerializeField] private int _startIndex = 1;
+        
+        public int CurrentPanel => _simpleScrollSnap.CenteredPanel;
+
+        public IObservable<int> ChangePanel;
+        
         public override PanelType PanelType => PanelType.Screen;
         
         public override bool RememberInHistory => false;
 
-        private CompositeDisposable _disposable = new();
-
-        private MaskData _maskData;
+        private List<MaskViewItem> _viewMaskItems = new();
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
             
             _closeButton.onClick.AddListener(() => _panelManager.OpenPanel<MenuView>());
+
+            _simpleScrollSnap.OnPanelCentered.AddListener(ChangeInteractableState);
+            
+            ChangePanel = _simpleScrollSnap.OnPanelSelected.AsObservable();
+        }
+
+        public MaskViewItem CreateMaskViewItem()
+        {
+            var maskView = Instantiate(_maskViewItemPrefab, _spawnViewSpawnPoint);
+
+            _viewMaskItems.Add(maskView);
+            
+            _simpleScrollSnap.AddToBack(maskView.gameObject);
+            
+            return maskView;
+        }
+
+        public void SetMaskName(string nameMask)
+        {
+            _nameMask.text = nameMask;
         }
         
 
-        public void Init(MaskData maskData)
+        public void ClearMaskViewItems()
         {
-            _maskData = maskData;
-            _name.text = _maskData.MaskName;
+            for (int i = 0; i < _viewMaskItems.Count; i++)
+            {
+                _simpleScrollSnap.RemoveFromFront();
+            }
 
-            _actionButton.OnClickAsObservable().Subscribe(_ => OnClickButton?.Invoke(_maskData));
+            _viewMaskItems.Clear();
         }
 
-        private void OnDestroy()
+        public void GoToFirstPanel()
         {
-            _disposable.Dispose();
+            _simpleScrollSnap.GoToNextPanel();
+            
+            _simpleScrollSnap.GoToPanel(_startIndex);
+            
+            _viewMaskItems[_startIndex].SetInteractable(true);
         }
 
+        private void ChangeInteractableState(int currentIndex, int previousIndex)
+        {
+            _viewMaskItems[previousIndex].SetInteractable(false);
+            
+            _viewMaskItems[currentIndex].SetInteractable(true);
+        }
 
     }
 }

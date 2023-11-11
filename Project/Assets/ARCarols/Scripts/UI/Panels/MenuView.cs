@@ -24,9 +24,9 @@ namespace ARCarols.Scripts.UI.Panels
 
         public DotsView DotsView => _dotsView;
 
-        public int CurrentPanel => _simpleScrollSnap.CurrentPanel;
+        public int CurrentPanel => _simpleScrollSnap.CenteredPanel;
 
-        public IObservable<Unit> ChangePanel;
+        public IObservable<int> ChangePanel;
         
         public IObservable<Unit> SelectItemOnClick;
 
@@ -38,7 +38,7 @@ namespace ARCarols.Scripts.UI.Panels
         protected override void OnInitialize()
         {
             SelectItemOnClick = _selectButton.onClick.AsObservable();
-            ChangePanel = _simpleScrollSnap.onPanelChanged.AsObservable();
+            ChangePanel = _simpleScrollSnap.OnPanelSelected.AsObservable();
         }
 
         public void OpenNextView(IView nextView)

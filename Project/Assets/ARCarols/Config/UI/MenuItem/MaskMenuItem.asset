@@ -16,5 +16,5 @@ MonoBehaviour:
   _description: 
   _iconPrefab: {fileID: 1859637520417787280, guid: 849137f5b9269b446b80902fe7629232,
     type: 3}
-  nextPanelForNavigate: {fileID: -985437506604045633, guid: c58cddc61ea75c64298e7c6baee78913,
+  nextPanelForNavigate: {fileID: 6730523491554542832, guid: beb8871543c64a844852ec862dae6116,
     type: 3}

@@ -1,5 +1,6 @@
 using Ar;
 using ARCarols.Scripts.Character;
+using ARCarols.Scripts.Masks;
 using ARCarols.Scripts.Models;
 using ARCarols.Scripts.Presenters;
 using ARCarols.Scripts.UI;
@@ -15,6 +16,8 @@ namespace EntryPoint
         [Header("Configs")]
         
         [SerializeField] private MenuItemsConfig _menuItemsConfig;
+
+        [SerializeField] private MaskListConfig _maskListConfig;
 
         [Header("Managers")]
         [SerializeField] private ScreenshotManager _screenshotManager;
@@ -49,6 +52,8 @@ namespace EntryPoint
 
             InitCharacterActionsModule();
 
+            InitMaskModule();
+
             InitSelfieModule();
         }
 
@@ -77,6 +82,15 @@ namespace EntryPoint
             var view = _mainPanelManager.SudoGetPanel<CharacterActionsView>();
 
             var characterActionsPresenter = new CharacterActionsPresenter(characterActionsModel, view);
+        }
+
+        private void InitMaskModule()
+        {
+            var maskModel = new MaskModel(_arManager, _screenshotManager, _maskListConfig);
+
+            var view = _mainPanelManager.SudoGetPanel<MaskView>();
+
+            var maskPresenter = new MaskPresenter(maskModel, view);
         }
 
         private void InitSelfieModule()
