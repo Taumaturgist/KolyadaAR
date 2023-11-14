@@ -20,4 +20,5 @@ MonoBehaviour:
     type: 3}
   _characterTextConfig: {fileID: 11400000, guid: 36b6095ef08886e47a3dc19cf92563ed,
     type: 2}
-  _panelForCharacterEvent: {fileID: 0}
+  _panelForCharacterEvent: {fileID: 6093796145072816216, guid: 68a30751ca9209d498f027ddae3d56ea,
+    type: 3}

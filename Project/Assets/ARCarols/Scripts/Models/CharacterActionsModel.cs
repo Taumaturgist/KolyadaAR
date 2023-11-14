@@ -1,5 +1,7 @@
 using Ar;
 using ARCarols.Scripts.Character;
+using ARCarols.Scripts.UI.Configs;
+using PanelManager.Scripts.Interfaces;
 using Project.Scripts.Models.Base;
 
 namespace ARCarols.Scripts.Models
@@ -22,6 +24,11 @@ namespace ARCarols.Scripts.Models
             var character = _arManager.GetCurrentCharacter();
             
             character.SetText(null);
+        }
+        
+        public IView GetPanelForCharacterEvent()
+        {
+            return _characterContainer.CharacterConfig.PanelForCharacterEvent;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ARCarols.Scripts.Models;
 using ARCarols.Scripts.UI.Panels;
 using Project.Scripts.Presenters.Base;
+using UniRx;
 
 namespace ARCarols.Scripts.Presenters
 {
@@ -15,7 +16,10 @@ namespace ARCarols.Scripts.Presenters
             base.ViewOpened();
             
             _model.CloseCharacterDialog();
+
+            _view.MoveToCharacterActionOnClick.Subscribe(_ => _view.OpenNextView(_model.GetPanelForCharacterEvent()));
         }
+        
         
         protected override void ViewClosed()
         {
