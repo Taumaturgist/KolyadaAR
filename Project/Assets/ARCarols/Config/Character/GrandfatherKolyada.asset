@@ -22,3 +22,4 @@ MonoBehaviour:
     type: 2}
   _panelForCharacterEvent: {fileID: 5067788371967349493, guid: db9ea2cd500386f4c91f1d94adf90d6b,
     type: 3}
+  _selfieData: {fileID: 11400000, guid: 11feeffe66e527f47ba1c81154b328e8, type: 2}

@@ -95,7 +95,7 @@ namespace EntryPoint
 
         private void InitSelfieModule()
         {
-            var selfieModel = new SelfieModel(_arManager, _screenshotManager);
+            var selfieModel = new SelfieModel(_arManager, _screenshotManager, _characterContainer);
 
             var view = _mainPanelManager.SudoGetPanel<SelfieView>();
 

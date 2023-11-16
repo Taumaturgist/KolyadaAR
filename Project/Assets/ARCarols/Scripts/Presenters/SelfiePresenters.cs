@@ -23,6 +23,7 @@ namespace ARCarols.Scripts.Presenters
         
         protected override void ViewClosed()
         {
+            _model.ResetMask();
             base.ViewClosed();
         }
     }

@@ -20,6 +20,10 @@ namespace ARCarols.Scripts.Character.Config
 
         [SerializeField] private ViewBase _panelForCharacterEvent;
 
+        [SerializeField] private MaskData _selfieData;
+
+        public MaskData SelfieData => _selfieData;
+
         public CharacterAnimationController CharacterPrefabAr => _characterPrefabAr;
         public string Name => _name;
 
