@@ -17,13 +17,26 @@ namespace ARCarols.Scripts.Models
             _arManager = arManager;
 
             _characterContainer = characterContainer;
+            _arManager.OnCharacterSpawn += SetCharacterOnScene;
+            
+        }
+
+        private void SetCharacterOnScene(CharacterAnimationController character)
+        {
+            character.SetText(null);
         }
 
         public void CloseCharacterDialog()
         {
-            var character = _arManager.GetCurrentCharacter();
+            _arManager.ChangeArState(ArState.CharacterState);
             
-            character.SetText(null);
+            var character = _arManager.GetCurrentCharacter();
+
+            if (character != null)
+            {
+                character.SetText(null);
+            }
+
         }
         
         public IView GetPanelForCharacterEvent()

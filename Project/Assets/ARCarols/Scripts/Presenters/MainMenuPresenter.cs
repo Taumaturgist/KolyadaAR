@@ -35,6 +35,8 @@ namespace ARCarols.Scripts.Presenters
 
             _view.SelectItemOnClick.Subscribe(_ => OpenNextView()).AddTo(_sessionDisposable);
 
+            _view.ButtonCloseApplicationOnClick.Subscribe(_ => _model.CloseApplication()).AddTo(_sessionDisposable);
+
             SetCurrent(0);
 
         }

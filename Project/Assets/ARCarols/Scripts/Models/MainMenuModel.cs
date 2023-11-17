@@ -5,6 +5,7 @@ using ARCarols.Scripts.UI.Configs;
 using ARCarols.Scripts.UI.Configs.Base;
 using PanelManager.Scripts.Interfaces;
 using Project.Scripts.Models.Base;
+using UnityEngine.Device;
 
 namespace ARCarols.Scripts.Models
 {
@@ -48,6 +49,11 @@ namespace ARCarols.Scripts.Models
             }
 
             return _currentItem.NextPanel;
+        }
+
+        public void CloseApplication()
+        {
+            Application.Quit();
         }
     }
 }

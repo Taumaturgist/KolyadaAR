@@ -22,6 +22,8 @@ namespace ARCarols.Scripts.UI.Panels
 
         [SerializeField] private Button _selectButton;
 
+        [SerializeField] private Button _buttonCloseApplication;
+
         public DotsView DotsView => _dotsView;
 
         public int CurrentPanel => _simpleScrollSnap.CenteredPanel;
@@ -29,6 +31,8 @@ namespace ARCarols.Scripts.UI.Panels
         public IObservable<int> ChangePanel;
         
         public IObservable<Unit> SelectItemOnClick;
+        
+        public IObservable<Unit> ButtonCloseApplicationOnClick;
 
         private List<MenuItemView> _menuItemsView = new();
 
@@ -39,6 +43,7 @@ namespace ARCarols.Scripts.UI.Panels
         {
             SelectItemOnClick = _selectButton.onClick.AsObservable();
             ChangePanel = _simpleScrollSnap.OnPanelSelected.AsObservable();
+            ButtonCloseApplicationOnClick = _buttonCloseApplication.OnClickAsObservable();
         }
 
         public void OpenNextView(IView nextView)
