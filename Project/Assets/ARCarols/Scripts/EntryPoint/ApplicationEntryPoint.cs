@@ -19,6 +19,9 @@ namespace EntryPoint
 
         [SerializeField] private MaskListConfig _maskListConfig;
 
+        [SerializeField] private PopupTextConfig _popupTextConfig;
+        
+
         [Header("Managers")]
         [SerializeField] private ScreenshotManager _screenshotManager;
 
@@ -33,8 +36,10 @@ namespace EntryPoint
             Application.targetFrameRate = 60;
 
             _characterContainer = new CurrentCharacterContainer();
+
+            InitConfig();
             
-            _mainPanelManager.Init();
+            InitManager();
 
             InitModule();
         }
@@ -44,6 +49,18 @@ namespace EntryPoint
             _mainPanelManager.OpenPanel<MenuView>();
         }
 
+        private void InitManager()
+        {
+            _screenshotManager.Init(_mainPanelManager);
+        }
+        
+        private void InitConfig()
+        {
+            _mainPanelManager.Init();
+            
+            _popupTextConfig.Init();
+        }
+        
         private void InitModule()
         {
             InitMonologueModule();

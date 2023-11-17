@@ -1,5 +1,8 @@
 using System;
 using System.Collections;
+using ARCarols.Scripts.UI.Enum;
+using ARCarols.Scripts.UI.Overlay;
+using PanelManager.Scripts;
 using UnityEngine;
 
 namespace Screenshoter
@@ -10,9 +13,18 @@ namespace Screenshoter
 
         private const string SCREENSHOT_FOLDER = "AR Коляда";
 
+        private PanelManagerBase _panelManager;
+
+        public void Init(PanelManagerBase panelManagerBase)
+        {
+            _panelManager = panelManagerBase;
+        }
+        
         public void TakeScreen()
         {
             StartCoroutine(TakeScreenshotCoroutine());
+            
+            _panelManager.OpenPanel<AppNotificationAnimatedView, PopupEnum>(PopupEnum.CompleteSave);
         }
 
         private IEnumerator TakeScreenshotCoroutine()
