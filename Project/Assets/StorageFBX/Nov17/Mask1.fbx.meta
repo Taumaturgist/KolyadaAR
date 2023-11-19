@@ -3,7 +3,67 @@ guid: d54d2b4287be0f943954006406c0498f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Bronze_Normal
+    second: {fileID: 2100000, guid: ac697d91abce9784981a6827229a3723, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Gold_Normal
+    second: {fileID: 2100000, guid: 6b64b15faf6f95f4ba158507efc1d1c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Gold_Opacity
+    second: {fileID: 2100000, guid: 228c65f6340ae2f46b1798bd5107f94f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Silver_Opacity
+    second: {fileID: 2100000, guid: 30592e4d8fd47ae4fa0d6d72d09476a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bronze_Mat
+    second: {fileID: 2100000, guid: aee7bc3a265760945a0507fb4520ba38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Detail_Gold_Normal
+    second: {fileID: 2100000, guid: ce6be6e0e7f59b8409e6fd1a7ee8c70c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Detail_Opacity
+    second: {fileID: 2100000, guid: 41d0a39726fc9064a9969fc8d2e362d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Detail_Silver_Normal
+    second: {fileID: 2100000, guid: 257d06c2d098a2b4b9fd3194fa36a998, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold_Mat
+    second: {fileID: 2100000, guid: 7ecba8367c8ca8641b711d1272c21d6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves_Normal
+    second: {fileID: 2100000, guid: b8c258066baf27546b4e4276d0deed52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Silver_Mat
+    second: {fileID: 2100000, guid: 1f0896b7c6cc8724ba70e75548dd1e95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stems_Normal
+    second: {fileID: 2100000, guid: 5d6987a4ba5654d4483d2ea1c009a4cf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
