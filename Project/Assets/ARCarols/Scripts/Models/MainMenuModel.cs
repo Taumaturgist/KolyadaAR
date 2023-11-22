@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Ar;
 using ARCarols.Scripts.Character;
+using ARCarols.Scripts.Character.Config;
+using ARCarols.Scripts.Data;
 using ARCarols.Scripts.UI.Configs;
 using ARCarols.Scripts.UI.Configs.Base;
 using PanelManager.Scripts.Interfaces;
@@ -18,23 +20,28 @@ namespace ARCarols.Scripts.Models
         private CurrentCharacterContainer _characterContainer;
 
         private MenuItemBase _currentItem;
-        
+
         private ArManager _arManager;
 
-        public MainMenuModel(MenuItemsConfig menuItemsConfig, CurrentCharacterContainer characterContainer, ArManager arManager)
+        private IView _panelForCompleteMonologueCharacter;
+
+        public MainMenuModel(MenuItemsConfig menuItemsConfig, CurrentCharacterContainer characterContainer,
+            ArManager arManager, IView panelForCompleteMonologueCharacter)
         {
             _characterContainer = characterContainer;
-            
+
             _menuItemsConfig = menuItemsConfig;
 
             _arManager = arManager;
+
+            _panelForCompleteMonologueCharacter = panelForCompleteMonologueCharacter;
         }
 
         public void ChangeArState()
         {
             _arManager.ChangeArState(ArState.Off);
         }
-        
+
         public void SetCurrentMenuItem(int index)
         {
             _currentItem = MenuItems[index];
@@ -45,7 +52,13 @@ namespace ARCarols.Scripts.Models
             //Set Current Character
             if (_currentItem is CharacterMenuItem item)
             {
-                _characterContainer.SetCurrentCharacterConfig(item.CharacterConfig);
+                _characterContainer.SetCurrentCharacter(item.CharacterConfig);
+
+                if (_characterContainer.CheckCompleteMonologue())
+                {
+                    return _panelForCompleteMonologueCharacter;
+                }
+                
             }
 
             return _currentItem.NextPanel;
@@ -55,5 +68,7 @@ namespace ARCarols.Scripts.Models
         {
             Application.Quit();
         }
+
+       
     }
 }

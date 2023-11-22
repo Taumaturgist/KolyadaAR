@@ -70,8 +70,6 @@ namespace ARCarols.Scripts.Models
 
         private void SetCharacterOnScene(CharacterAnimationController characterAnimationController)
         {
-            Debug.Log("SetCharacterOnScene");
-            
             _characterAnimationController = characterAnimationController;
             
             SetMonologueOnScene();
@@ -88,6 +86,9 @@ namespace ARCarols.Scripts.Models
             if (_currentCharacterConfig.CharacterTextConfig.TextList.Count == _currentMonologueIndex)
             {
                 OnEndMonologue.Execute();
+
+                _characterContainer.EndMonologueCurrentCharacter();
+                    
                 return;
             }
 

@@ -76,7 +76,10 @@ namespace EntryPoint
 
         private void InitMainMenuModule()
         {
-            var mainMenuModel = new MainMenuModel(_menuItemsConfig, _characterContainer, _arManager);
+            
+            var panelForCompleteMonologueCharacter = _mainPanelManager.SudoGetPanel<CharacterActionsView>();
+            
+            var mainMenuModel = new MainMenuModel(_menuItemsConfig, _characterContainer, _arManager, panelForCompleteMonologueCharacter);
 
             var view = _mainPanelManager.SudoGetPanel<MenuView>();
 
