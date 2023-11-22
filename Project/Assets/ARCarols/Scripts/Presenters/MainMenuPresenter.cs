@@ -2,6 +2,7 @@
 using ARCarols.Scripts.UI.Panels;
 using Project.Scripts.Presenters.Base;
 using UniRx;
+using UnityEngine;
 
 namespace ARCarols.Scripts.Presenters
 {
@@ -17,6 +18,8 @@ namespace ARCarols.Scripts.Presenters
             base.ViewOpened();
 
             _model.ChangeArState();
+            
+            Debug.Log("VIEW OPEN");
 
             for (int i = 0; i < _model.MenuItems.Count; i++)
             {
