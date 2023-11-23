@@ -21,16 +21,8 @@ namespace ARCarols.Scripts.Data.Base
 
         public T Load()
         {
-            if (PlayerPrefs.HasKey(DataKey))
-            {
-                return JsonUtility.FromJson<T>(DataKey);
-            }
-            else
-            {
-                return CreatDefault();
-            }
-            
-
+            Data = PlayerPrefs.HasKey(DataKey) ? JsonUtility.FromJson<T>(DataKey) : CreatDefault();
+            return Data;
         }
 
         protected abstract T CreatDefault();

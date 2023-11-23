@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ARCarols.Scripts.Character;
+using ARCarols.Scripts.UI.Enum;
+using ARCarols.Scripts.UI.Overlay;
+using PanelManager.Scripts;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -30,6 +33,13 @@ namespace Ar
         private const float SPAWN_OFFSET = 10f;
 
         private CharacterAnimationController _currentCharacter;
+
+        private PanelManagerBase _panelManager;
+
+        public void Init(PanelManagerBase panelManagerBase)
+        {
+            _panelManager = panelManagerBase;
+        }
         
 
         private void OnEnable()
@@ -49,10 +59,13 @@ namespace Ar
 
         private IEnumerator SpawnCharacterCoroutine()
         {
+            _panelManager?.OpenPanel<ArNotificationView, PopupEnum>(PopupEnum.ArWarning);
             while (!_raycastManager.Raycast(new Vector2(0.5f, 0.5f), s_Hits, TrackableType.PlaneWithinPolygon))
             {
                 yield return null;
             }
+            
+            _panelManager?.ClosePanel<ArNotificationView>();
 
             var hitPose = s_Hits[0].pose;
 

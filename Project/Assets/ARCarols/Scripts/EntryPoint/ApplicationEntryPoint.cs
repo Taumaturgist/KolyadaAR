@@ -88,7 +88,7 @@ namespace EntryPoint
 
         private void InitMonologueModule()
         { 
-            var monologueModel = new MonologueModel(_characterContainer, _arManager);
+            var monologueModel = new MonologueModel(_characterContainer, _arManager, _mainPanelManager);
             
             var view = _mainPanelManager.SudoGetPanel<CharacterMonologueView>();
 

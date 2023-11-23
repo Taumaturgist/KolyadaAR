@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using ARCarols.Scripts.Character.Config;
 using ARCarols.Scripts.Data;
+using UnityEngine;
 
 namespace ARCarols.Scripts.Character
 {
@@ -23,6 +24,8 @@ namespace ARCarols.Scripts.Character
 
         public bool CheckCompleteMonologue()
         {
+            Debug.Log(_currentCharacterDataController);
+            Debug.Log(_currentCharacterDataController.IsCompletedMonologue);
             return _currentCharacterDataController.IsCompletedMonologue;
         }
 

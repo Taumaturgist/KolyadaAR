@@ -4,5 +4,6 @@ namespace ARCarols.Scripts.UI.Enum
     {
         None = 0,
         CompleteSave = 1,
+        ArWarning = 2
     }
 }

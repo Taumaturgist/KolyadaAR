@@ -7,7 +7,8 @@ using ARCarols.Scripts.UI.Configs;
 using ARCarols.Scripts.UI.Configs.Base;
 using PanelManager.Scripts.Interfaces;
 using Project.Scripts.Models.Base;
-using UnityEngine.Device;
+using UnityEngine;
+using Application = UnityEngine.Device.Application;
 
 namespace ARCarols.Scripts.Models
 {
@@ -53,6 +54,8 @@ namespace ARCarols.Scripts.Models
             if (_currentItem is CharacterMenuItem item)
             {
                 _characterContainer.SetCurrentCharacter(item.CharacterConfig);
+                
+                Debug.Log(_characterContainer);
 
                 if (_characterContainer.CheckCompleteMonologue())
                 {

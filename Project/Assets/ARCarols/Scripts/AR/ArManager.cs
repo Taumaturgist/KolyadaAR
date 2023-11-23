@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using ARCarols.Scripts.Character;
 using ARCarols.Scripts.Character.Config;
+using PanelManager.Scripts;
 using UnityEngine;
 
 namespace Ar
@@ -24,9 +25,17 @@ namespace Ar
 
         [SerializeField] private GameObject _popup;
 
-        private ArState _currentState = ArState.Off;
-        
-        
+        private ArState _currentState = ArState.CharacterState;
+
+        private void Start()
+        {
+            ChangeArState(ArState.Off);
+        }
+
+        public void Init(PanelManagerBase panelManagerBase)
+        {
+            _characterPlaceOnSpace.Init(panelManagerBase);
+        }
 
         public ArManager ChangeArState(ArState arState)
         {

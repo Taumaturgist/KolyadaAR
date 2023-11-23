@@ -1,6 +1,7 @@
 ﻿using Ar;
 using ARCarols.Scripts.Character;
 using ARCarols.Scripts.Character.Config;
+using PanelManager.Scripts;
 using Project.Scripts.Models.Base;
 using UniRx;
 using UnityEngine;
@@ -24,13 +25,15 @@ namespace ARCarols.Scripts.Models
         private int _currentMonologueIndex = 0;
 
 
-        public MonologueModel(CurrentCharacterContainer characterContainer, ArManager arManager)
+        public MonologueModel(CurrentCharacterContainer characterContainer, ArManager arManager, PanelManagerBase panelManagerBase)
         {
             _characterContainer = characterContainer;
 
             _arManager = arManager;
             
             _arManager.OnCharacterSpawn += SetCharacterOnScene;
+            
+            _arManager.Init(panelManagerBase);
         }
 
         public void RefreshData()
