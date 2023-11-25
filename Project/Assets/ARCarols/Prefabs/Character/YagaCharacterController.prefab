@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2062508626950800441}
   - component: {fileID: 8310218140796501774}
   - component: {fileID: 1539105758530814733}
+  - component: {fileID: 7606325583032612173}
   m_Layer: 5
   m_Name: YagaCharacterController
   m_TagString: Untagged
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d915f38aa0f30548b04ccbeda9d7c6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94cc73d4863ddbf4f8013d9228f481a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -92,6 +93,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textComponent: {fileID: 2677022534144098479}
   _textCharacter: {fileID: 2672037582280542740}
+  _animator: {fileID: 7606325583032612173}
+--- !u!95 &7606325583032612173
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748144436308280088}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62b1ea98a91969f4d84b4a16bde100d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2334426188568686441
 PrefabInstance:
   m_ObjectHideFlags: 0
