@@ -447,6 +447,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2047990619}
     m_Modifications:
+    - target: {fileID: 381443256023155374, guid: 4fa7ccb82cb0b9f46939092c67c7fa60,
+        type: 3}
+      propertyPath: _arCamera
+      value: 
+      objectReference: {fileID: 897968186}
     - target: {fileID: 1213531165606674321, guid: 4fa7ccb82cb0b9f46939092c67c7fa60,
         type: 3}
       propertyPath: m_Camera
@@ -543,6 +548,12 @@ MonoBehaviour:
 --- !u!20 &897968185 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2048446995918527212, guid: 4fa7ccb82cb0b9f46939092c67c7fa60,
+    type: 3}
+  m_PrefabInstance: {fileID: 897968182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &897968186 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5334237601025065203, guid: 4fa7ccb82cb0b9f46939092c67c7fa60,
     type: 3}
   m_PrefabInstance: {fileID: 897968182}
   m_PrefabAsset: {fileID: 0}

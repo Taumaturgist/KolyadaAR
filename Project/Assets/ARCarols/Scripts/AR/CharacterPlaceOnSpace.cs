@@ -26,6 +26,7 @@ namespace Ar
 
         [SerializeField] private ARRaycastManager _raycastManager;
 
+        [SerializeField] private Camera _arCamera;
 
         private CharacterAnimationController _anchorPrefab;
         
@@ -56,7 +57,17 @@ namespace Ar
             
             _currentCharacter = null;
         }
-        
+
+        private void FixedUpdate()
+        {
+            if (_currentCharacter == null)
+            {
+                return;
+            }
+
+            _currentCharacter.transform.LookAt(_arCamera.transform);
+        }
+
 
         private IEnumerator SpawnCharacterCoroutine()
         {
@@ -77,6 +88,7 @@ namespace Ar
                     if (hits.Count > 0)
                     {
                         _currentCharacter = Instantiate(_anchorPrefab, new Vector3(hits[0].pose.position.x, hits[0].pose.position.y + 0.5f, hits[0].pose.position.z) , quaternion.identity);
+                        _currentCharacter.transform.LookAt(_arCamera.transform);
                     }
                     
                 }
