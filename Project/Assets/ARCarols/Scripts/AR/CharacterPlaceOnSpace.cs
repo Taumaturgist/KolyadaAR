@@ -55,7 +55,9 @@ namespace Ar
             
             Destroy(_currentCharacter.gameObject);
             
-            _currentCharacter = null;
+            _currentCharacter = null;   
+            
+            StopAllCoroutines();
         }
 
         private void FixedUpdate()
@@ -71,6 +73,8 @@ namespace Ar
 
         private IEnumerator SpawnCharacterCoroutine()
         {
+            yield return new WaitForSeconds(0.5f);
+            
             _panelManager?.OpenPanel<ArNotificationView, PopupEnum>(PopupEnum.ArWarning);
             // while (!_raycastManager.Raycast(new Vector2(0.5f, 0.5f), s_Hits, TrackableType.PlaneWithinPolygon))
             // {
