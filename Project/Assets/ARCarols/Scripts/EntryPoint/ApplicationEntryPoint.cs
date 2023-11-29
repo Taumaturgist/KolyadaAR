@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Ar;
 using ARCarols.Scripts.Character;
 using ARCarols.Scripts.Masks;
@@ -46,7 +48,7 @@ namespace EntryPoint
 
         private void Start()
         {
-            _mainPanelManager.OpenPanel<MenuView>();
+            InitCameraPermissionModule();
         }
 
         private void InitManager()
@@ -64,7 +66,7 @@ namespace EntryPoint
         private void InitModule()
         {
             InitMonologueModule();
-            
+
             InitMainMenuModule();
 
             InitCharacterActionsModule();
@@ -84,6 +86,14 @@ namespace EntryPoint
             var view = _mainPanelManager.SudoGetPanel<MenuView>();
 
             var mainMenuPresenter = new MainMenuPresenter(mainMenuModel, view);
+        }
+        
+        private void InitCameraPermissionModule()
+        {
+            var view = _mainPanelManager.SudoGetPanel<CameraPermissionView>();
+
+            var cameraPermissionPresenter = new CameraPermissionPresenter(null, view, _mainPanelManager);
+            
         }
 
         private void InitMonologueModule()

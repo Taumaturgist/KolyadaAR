@@ -1,3 +1,4 @@
+using System;
 using ARCarols.Scripts.UI.Configs;
 using ARCarols.Scripts.UI.Enum;
 using DG.Tweening;
@@ -39,6 +40,16 @@ public class CameraPermissionView : ViewBase, IAcceptArg<PopupEnum>
         AnimationComplete();
     }
 
+    public void AddButtonListener(Action action)
+    {
+        _buttonSkip.onClick.AddListener(() => action?.Invoke());
+    }
+
+    public void ClearListeners()
+    {
+        _buttonSkip.onClick.RemoveAllListeners();
+    }
+
     private void StartAnimation()
     {
         _sequence = DOTween.Sequence();
@@ -46,10 +57,6 @@ public class CameraPermissionView : ViewBase, IAcceptArg<PopupEnum>
         _defaultColorBackgroundText = _backgroundText.color;
             
         _defaultNotificationText = _notificationText.color;
-            
-        // _sequence.SetDelay(_delay)
-        //     .Append(_backgroundText.DOFade(0, _animationDuration))
-        //     .Join(_notificationText.DOFade(0, _animationDuration));
     }
 
     private void AnimationComplete()
