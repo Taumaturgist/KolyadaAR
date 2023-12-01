@@ -38,7 +38,7 @@ namespace EntryPoint
             Application.targetFrameRate = 60;
 
             _characterContainer = new CurrentCharacterContainer();
-
+            
             InitConfig();
             
             InitManager();
@@ -46,9 +46,18 @@ namespace EntryPoint
             InitModule();
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
-            InitCameraPermissionModule();
+            var view = _mainPanelManager.SudoGetPanel<CameraPermissionView>();
+
+            var cameraPermissionPresenter = new CameraPermissionPresenter(null, view, _mainPanelManager);
+            
+            _mainPanelManager.OpenPanel<MenuView>();
+            
+            while (!cameraPermissionPresenter.CheckCameraPermission())
+            {
+                yield return null;
+            }
         }
 
         private void InitManager()
@@ -65,6 +74,8 @@ namespace EntryPoint
         
         private void InitModule()
         {
+            InitCameraPermissionModule();
+            
             InitMonologueModule();
 
             InitMainMenuModule();
