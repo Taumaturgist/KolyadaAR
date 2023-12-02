@@ -1,4 +1,5 @@
 using ARCarols.Scripts.Character.Config;
+using ARCarols.Scripts.UI.Animation;
 using DG.Tweening;
 using PanelManager.Scripts.Panels;
 using TMPro;
@@ -29,6 +30,8 @@ namespace ARCarols.Scripts.UI.Panels
 
         [SerializeField] private float _durationAnimation = 2;
 
+        [SerializeField] private TypingTextAnimation _typingTextAnimation;
+
         public override PanelType PanelType => PanelType.Screen;
 
         public override bool RememberInHistory => false;
@@ -55,18 +58,27 @@ namespace ARCarols.Scripts.UI.Panels
 
         private void GetRandomText()
         {
-            _answerText.text = _characterTextConfig.TextList[Random.Range(0, _characterTextConfig.TextList.Count)];
+            var data = _characterTextConfig.CharacterTextProviders[Random.Range(0, _characterTextConfig.CharacterTextProviders.Count)];
+            
+            _typingTextAnimation.SetText(data.Text, data.AudioClip);
+
         }
 
         private void StartAnimation()
         {
+            if (_typingTextAnimation.IsTextWriting)
+            {
+                _typingTextAnimation.SkipAnimation();
+                return;
+            }
+            
             if (_isStarted)
             {
                 return;
             }
 
-            GetRandomText();
-
+            _answerText.text = "";
+            
             _closeButton.interactable = false;
             
             _isStarted = true;
@@ -121,6 +133,8 @@ namespace ARCarols.Scripts.UI.Panels
             _isStarted = false;
 
             _closeButton.interactable = true;
+            
+            GetRandomText();
             
             ClearAnimation();
         }

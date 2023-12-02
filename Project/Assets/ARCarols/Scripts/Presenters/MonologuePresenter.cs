@@ -24,9 +24,9 @@ namespace ARCarols.Scripts.Presenters
 
             _model.CurrentMonologueIndex.Subscribe(_view.ValidateButtonState).AddTo(_sessionDisposable);
 
-            _view.PreviousButtonOnClick.Subscribe(_ => _model.SetPreviousMonologue()).AddTo(_sessionDisposable);
+            _view.PreviousButtonOnClick.Subscribe(_ => _model.EditMonologueIndex(-1)).AddTo(_sessionDisposable);
             
-            _view.NextButtonOnClick.Subscribe(_ => _model.SetNextMonologue()).AddTo(_sessionDisposable);
+            _view.NextButtonOnClick.Subscribe(_ => _model.EditMonologueIndex(1)).AddTo(_sessionDisposable);
         }
         
         protected override void ViewClosed()

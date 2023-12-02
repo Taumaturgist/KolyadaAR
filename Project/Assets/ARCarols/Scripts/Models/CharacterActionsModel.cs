@@ -1,6 +1,5 @@
 using Ar;
 using ARCarols.Scripts.Character;
-using ARCarols.Scripts.UI.Configs;
 using PanelManager.Scripts.Interfaces;
 using Project.Scripts.Models.Base;
 
@@ -23,7 +22,7 @@ namespace ARCarols.Scripts.Models
 
         private void SetCharacterOnScene(CharacterAnimationController character)
         {
-            character.SetText(null);
+            character.SetText(null, null);
         }
 
         public void CloseCharacterDialog()
@@ -34,7 +33,7 @@ namespace ARCarols.Scripts.Models
 
             if (character != null)
             {
-                character.SetText(null);
+                character.SetText(null, null);
             }
 
         }

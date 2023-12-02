@@ -74,7 +74,7 @@ namespace EntryPoint
         
         private void InitModule()
         {
-            InitCameraPermissionModule();
+            // InitCameraPermissionModule();
             
             InitMonologueModule();
 
