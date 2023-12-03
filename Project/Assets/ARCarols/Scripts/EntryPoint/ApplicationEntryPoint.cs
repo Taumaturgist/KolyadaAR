@@ -52,9 +52,8 @@ namespace EntryPoint
         private IEnumerator Start()
         {
             _mainPanelManager.OpenPanel<MenuView>();
-            
-            
-            while (!_cameraPermissionModel.CheckCameraPermission())
+
+            while (_cameraPermissionModel.CheckCameraPermission() == false)
             {
                 yield return null;
             }

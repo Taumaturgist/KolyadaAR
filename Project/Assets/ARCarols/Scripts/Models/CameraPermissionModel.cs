@@ -4,12 +4,11 @@ using UnityEngine.Android;
 
 namespace ARCarols.Scripts.Models
 {
-    public class CameraPermissionModel: ModelBase
+    public class CameraPermissionModel : ModelBase
     {
-
         public ReactiveCommand OnCameraRequest;
-        
-        private bool _requestCamPerm;
+
+        private bool _viewOpened;
         private bool _permissionAccess;
 
         public CameraPermissionModel()
@@ -19,43 +18,47 @@ namespace ARCarols.Scripts.Models
 
         public void UpdateRequestCameraPermission()
         {
-            _requestCamPerm = false;
+            _viewOpened = false;
+            Permission.RequestUserPermission(Permission.Camera);
         }
-        
-        
+
+
+        // public bool CheckCameraPermission()
+        // {
+        //     if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
+        //     {
+        //         if (!_requestCamPerm)
+        //         {
+        //             Permission.RequestUserPermission(Permission.Camera);
+        //         }
+        //         else if(!_permissionAccess)
+        //         {
+        //             _permissionAccess = true;
+        //             
+        //             OnCameraRequest.Execute();
+        //         }
+        //         _requestCamPerm = true;
+        //         return false;
+        //     }
+        //     
+        //     return true;
+        // }
+
         public bool CheckCameraPermission()
         {
-            if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
+            if (Permission.HasUserAuthorizedPermission(Permission.Camera) == false)
             {
-                if (!_requestCamPerm)
+                if (_viewOpened == false)
                 {
-                    Permission.RequestUserPermission(Permission.Camera);
-                }
-                else if(!_permissionAccess)
-                {
-                    _permissionAccess = true;
-                    
+                    _viewOpened = true;
+
                     OnCameraRequest.Execute();
                 }
-                _requestCamPerm = true;
+
                 return false;
             }
-            
+
             return true;
         }
-        
-        public bool CheckCameraPermissionActive()
-        {
-                    
-            if (Permission.HasUserAuthorizedPermission(Permission.Camera))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-
-
     }
 }
