@@ -7,6 +7,7 @@ using ARCarols.Scripts.Models;
 using ARCarols.Scripts.Presenters;
 using ARCarols.Scripts.UI;
 using ARCarols.Scripts.UI.Configs;
+using ARCarols.Scripts.UI.Overlay;
 using ARCarols.Scripts.UI.Panels;
 using Screenshoter;
 using UnityEngine;
@@ -31,7 +32,9 @@ namespace EntryPoint
 
         [SerializeField] private ArManager _arManager;
 
-        private CurrentCharacterContainer _characterContainer; 
+        private CurrentCharacterContainer _characterContainer;
+
+        private CameraPermissionModel _cameraPermissionModel;
 
         private void Awake()
         {
@@ -48,13 +51,10 @@ namespace EntryPoint
 
         private IEnumerator Start()
         {
-            var view = _mainPanelManager.SudoGetPanel<CameraPermissionView>();
-
-            var cameraPermissionPresenter = new CameraPermissionPresenter(null, view, _mainPanelManager);
-            
             _mainPanelManager.OpenPanel<MenuView>();
             
-            while (!cameraPermissionPresenter.CheckCameraPermission())
+            
+            while (!_cameraPermissionModel.CheckCameraPermission())
             {
                 yield return null;
             }
@@ -74,7 +74,7 @@ namespace EntryPoint
         
         private void InitModule()
         {
-            // InitCameraPermissionModule();
+            InitCameraPermissionModule();
             
             InitMonologueModule();
 
@@ -101,9 +101,11 @@ namespace EntryPoint
         
         private void InitCameraPermissionModule()
         {
+             _cameraPermissionModel = new CameraPermissionModel();
+            
             var view = _mainPanelManager.SudoGetPanel<CameraPermissionView>();
 
-            var cameraPermissionPresenter = new CameraPermissionPresenter(null, view, _mainPanelManager);
+            var cameraPermissionPresenter = new CameraPermissionPresenter(_cameraPermissionModel, view);
             
         }
 

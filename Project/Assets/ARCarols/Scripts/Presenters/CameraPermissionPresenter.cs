@@ -1,65 +1,34 @@
 using ARCarols.Scripts.Models;
-using ARCarols.Scripts.UI;
-using ARCarols.Scripts.UI.Enum;
-using ARCarols.Scripts.UI.Panels;
+using ARCarols.Scripts.UI.Overlay;
 using Project.Scripts.Presenters.Base;
-using UnityEngine.Android;
+using UniRx;
 
 namespace ARCarols.Scripts.Presenters
 {
-    public class CameraPermissionPresenter : PresenterBase<MonologueModel, CameraPermissionView>
+    public class CameraPermissionPresenter : PresenterBase<CameraPermissionModel, CameraPermissionView>
     {
-        private bool _requestCamPerm;
-        private bool _permissionAccess;
-        private MainPanelManager _mainPanelManager;
-
-        public CameraPermissionPresenter(MonologueModel model, CameraPermissionView view, MainPanelManager mainPanelManager) : base(model, view)
+        
+        public CameraPermissionPresenter(CameraPermissionModel model, CameraPermissionView view) : base(model, view)
         {
-            _mainPanelManager = mainPanelManager;
-            if (Permission.HasUserAuthorizedPermission(Permission.Camera))
-            {
-                _mainPanelManager.OpenPanel<MenuView>();
-                return;
-            }
-            view.AddButtonListener(OnCloseView);
-            Permission.RequestUserPermission(Permission.Camera);
+            _model.OnCameraRequest.Subscribe(_ => _view.Open());
         }
 
         protected override void ViewOpened()
         {
             base.ViewOpened();
+            
+            _view.SkipButtonClick.Subscribe(_ => OnCloseView()).AddTo(_sessionDisposable);
+            
         }
 
         protected override void ViewClosed()
         {
-            
             base.ViewClosed();
-        }
-
-        public bool CheckCameraPermission()
-        {
-            if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
-            {
-                if (!_requestCamPerm)
-                {
-                    Permission.RequestUserPermission(Permission.Camera);
-                }
-                else if(!_permissionAccess)
-                {
-                    _permissionAccess = true;
-                    _mainPanelManager.OpenPanel<CameraPermissionView, PopupEnum>(PopupEnum.CameraNotificationSecond);
-                }
-                _requestCamPerm = true;
-                return false;
-            }
-            
-            return true;
         }
 
         private void OnCloseView()
         {
-            _permissionAccess = false;
-            Permission.RequestUserPermission(Permission.Camera);
+            _model.UpdateRequestCameraPermission();
             _view.Close();
         }
     }
