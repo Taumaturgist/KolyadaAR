@@ -1,4 +1,5 @@
 using ARCarols.Scripts.Models;
+using ARCarols.Scripts.UI.Enum;
 using ARCarols.Scripts.UI.Overlay;
 using Project.Scripts.Presenters.Base;
 using UniRx;
@@ -10,6 +11,7 @@ namespace ARCarols.Scripts.Presenters
         
         public CameraPermissionPresenter(CameraPermissionModel model, CameraPermissionView view) : base(model, view)
         {
+            _view.AcceptArg(PopupEnum.CameraNotificationSecond);
             _model.OnCameraRequest.Subscribe(_ => _view.Open());
         }
 

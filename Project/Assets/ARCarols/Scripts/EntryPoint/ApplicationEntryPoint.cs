@@ -57,6 +57,8 @@ namespace EntryPoint
             {
                 yield return null;
             }
+            
+            _arManager.gameObject.SetActive(true);
         }
 
         private void InitManager()

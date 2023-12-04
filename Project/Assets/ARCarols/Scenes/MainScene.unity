@@ -522,6 +522,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8629190776139943989, guid: 4fa7ccb82cb0b9f46939092c67c7fa60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

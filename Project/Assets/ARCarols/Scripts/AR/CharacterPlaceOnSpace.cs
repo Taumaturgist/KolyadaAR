@@ -73,21 +73,14 @@ namespace Ar
 
         private IEnumerator SpawnCharacterCoroutine()
         {
-            yield return new WaitForSeconds(0.5f);
-            
             _panelManager?.OpenPanel<ArNotificationView, PopupEnum>(PopupEnum.ArWarning);
-            // while (!_raycastManager.Raycast(new Vector2(0.5f, 0.5f), s_Hits, TrackableType.PlaneWithinPolygon))
-            // {
-            //     yield return null;
-            // }
-            
+           
             List<ARRaycastHit> hits = new List<ARRaycastHit>();
             
             while (_currentCharacter == null)
             {
                 if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
                 {
-                    //_raycastManager.Raycast(Input.touches[0].position, hits, TrackableType.Planes);
                     _raycastManager.Raycast(Input.touches[0].position, hits, TrackableType.Planes);
                     if (hits.Count > 0)
                     {
@@ -101,13 +94,7 @@ namespace Ar
             
             _panelManager?.ClosePanel<ArNotificationView>();
 
-            //var hitPose = s_Hits[0].pose;
-
-            // _currentCharacter = Instantiate(_anchorPrefab,
-            //     new Vector3(hitPose.position.x, hitPose.position.y, hitPose.position.z + SPAWN_OFFSET),
-            //     Quaternion.identity);
-            
-            OnCharacterSpawn?.Invoke(_currentCharacter);
+           OnCharacterSpawn?.Invoke(_currentCharacter);
         }
         
         
