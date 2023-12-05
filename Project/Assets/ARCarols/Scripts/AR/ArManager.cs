@@ -12,7 +12,7 @@ namespace Ar
         public Action<CharacterAnimationController> OnCharacterSpawn
         {
             get => _characterPlaceOnSpace.OnCharacterSpawn;
-            set => _characterPlaceOnSpace.OnCharacterSpawn += value;
+            set => _characterPlaceOnSpace.OnCharacterSpawn = value;
         }
 
         [SerializeField] private ArFaceTrackingManager _arFaceTrackingManager;
