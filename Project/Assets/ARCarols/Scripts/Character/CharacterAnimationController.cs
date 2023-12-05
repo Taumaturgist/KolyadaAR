@@ -17,7 +17,7 @@ namespace ARCarols.Scripts.Character
 
         public void SetText(string text, AudioClip audioClip)
         {
-            _textCharacter.gameObject.SetActive(!string.IsNullOrEmpty(text));
+            _textCharacter.SetActive(!string.IsNullOrEmpty(text));
 
             if (text != null)
             {
