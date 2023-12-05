@@ -55,13 +55,10 @@ namespace ARCarols.Scripts.UI.Animation
             
             _textComponent.text = ""; // Очистка текста перед началом
 
-            if (fullText != null)
+            foreach (char letter in fullText)
             {
-                foreach (char letter in fullText)
-                {
-                    _textComponent.text += letter; // Добавление буквы к тексту
-                    yield return new WaitForSeconds(speed); // Ожидание следующей буквы
-                }
+                _textComponent.text += letter; // Добавление буквы к тексту
+                yield return new WaitForSeconds(speed); // Ожидание следующей буквы
             }
 
             _isTextWriting = false;

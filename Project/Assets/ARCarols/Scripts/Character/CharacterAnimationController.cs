@@ -11,15 +11,21 @@ namespace ARCarols.Scripts.Character
 
         [SerializeField] private TypingTextAnimation _typingTextAnimation;
         
+        private static readonly int IsTalk = Animator.StringToHash("isTalk");
+
         public bool IsTextWriting => _typingTextAnimation.IsTextWriting;
 
         public void SetText(string text, AudioClip audioClip)
         {
             _textCharacter.gameObject.SetActive(!string.IsNullOrEmpty(text));
 
-            _typingTextAnimation.SetText(text, audioClip);
+            if (text != null)
+            {
+                _typingTextAnimation.SetText(text, audioClip);
 
-            _animator.SetBool("isTalk", !string.IsNullOrEmpty(text));
+                _animator.SetBool(IsTalk, !string.IsNullOrEmpty(text));
+            }
+            
         }
 
         public void SkipAnimation()

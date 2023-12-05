@@ -16,7 +16,7 @@ namespace ARCarols.Scripts.Data.Base
             
             Debug.Log(json);
             
-            PlayerPrefs.SetString(json, DataKey);
+            PlayerPrefs.SetString(DataKey, json);
             
             PlayerPrefs.Save();
         }
