@@ -32,9 +32,17 @@ namespace ARCarols.Scripts.Models
 
             _arManager = arManager;
 
-            _arManager.OnCharacterSpawn += SetCharacterOnScene;
-
             _arManager.Init(panelManagerBase);
+        }
+        
+        public void SubscribeOnCharacterSpawn()
+        {
+            _arManager.OnCharacterSpawn += SetCharacterOnScene;
+        }
+        
+        public void DisposeOnCharacterSpawn()
+        {
+            _arManager.OnCharacterSpawn -= SetCharacterOnScene;
         }
 
         public void RefreshData()
@@ -85,7 +93,7 @@ namespace ARCarols.Scripts.Models
                 return;
             }
 
-            if (_currentCharacterConfig.CharacterTextConfig.TextList.Count == _currentMonologueIndex)
+            if (_currentCharacterConfig.CharacterTextConfig.CharacterTextProviders.Count == _currentMonologueIndex)
             {
                 OnEndMonologue.Execute();
 

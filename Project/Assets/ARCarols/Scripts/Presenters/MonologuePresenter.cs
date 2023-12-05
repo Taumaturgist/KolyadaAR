@@ -16,6 +16,8 @@ namespace ARCarols.Scripts.Presenters
         {
             base.ViewOpened();
             
+            _model.SubscribeOnCharacterSpawn();
+            
             _model.RefreshData();
 
             _view.ValidateButtonState(_model.CurrentMonologueIndex.Value);
@@ -32,6 +34,8 @@ namespace ARCarols.Scripts.Presenters
         protected override void ViewClosed()
         {
             base.ViewClosed();
+            
+            _model.DisposeOnCharacterSpawn();
         }
     }
 }
