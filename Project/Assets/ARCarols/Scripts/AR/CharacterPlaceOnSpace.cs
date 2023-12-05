@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using ARCarols.Scripts.Character;
 using ARCarols.Scripts.UI.Enum;
-using ARCarols.Scripts.UI.Overlay;
 using PanelManager.Scripts;
 using Unity.Mathematics;
 using UnityEngine;
@@ -29,7 +28,7 @@ namespace Ar
         [SerializeField] private Camera _arCamera;
 
         private CharacterAnimationController _anchorPrefab;
-        
+
         private static List<ARRaycastHit> s_Hits = new();
 
         private const float SPAWN_OFFSET = 10f;
@@ -42,7 +41,7 @@ namespace Ar
         {
             _panelManager = panelManagerBase;
         }
-        
+
 
         private void OnEnable()
         {
@@ -51,13 +50,18 @@ namespace Ar
 
         private void OnDisable()
         {
-            if (_currentCharacter == null) return;
-            
-            Destroy(_currentCharacter.gameObject);
-            
-            _currentCharacter = null;   
-            
+            if (_panelManager.SudoGetPanel<ArNotificationView>() != null)
+            {
+                _panelManager?.ClosePanel<ArNotificationView>();
+            }
+
             StopAllCoroutines();
+
+            if (_currentCharacter == null) return;
+
+            Destroy(_currentCharacter.gameObject);
+
+            _currentCharacter = null;
         }
 
         private void FixedUpdate()
@@ -74,9 +78,9 @@ namespace Ar
         private IEnumerator SpawnCharacterCoroutine()
         {
             _panelManager?.OpenPanel<ArNotificationView, PopupEnum>(PopupEnum.ArWarning);
-           
+
             List<ARRaycastHit> hits = new List<ARRaycastHit>();
-            
+
             while (_currentCharacter == null)
             {
                 if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
@@ -84,19 +88,19 @@ namespace Ar
                     _raycastManager.Raycast(Input.touches[0].position, hits, TrackableType.Planes);
                     if (hits.Count > 0)
                     {
-                        _currentCharacter = Instantiate(_anchorPrefab, new Vector3(hits[0].pose.position.x, hits[0].pose.position.y + 0.5f, hits[0].pose.position.z) , quaternion.identity);
+                        _currentCharacter = Instantiate(_anchorPrefab,
+                            new Vector3(hits[0].pose.position.x, hits[0].pose.position.y + 0.5f,
+                                hits[0].pose.position.z), quaternion.identity);
                         _currentCharacter.transform.LookAt(_arCamera.transform);
                     }
-                    
                 }
+
                 yield return null;
             }
-            
+
             _panelManager?.ClosePanel<ArNotificationView>();
 
-           OnCharacterSpawn?.Invoke(_currentCharacter);
+            OnCharacterSpawn?.Invoke(_currentCharacter);
         }
-        
-        
     }
 }

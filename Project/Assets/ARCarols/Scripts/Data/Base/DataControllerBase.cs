@@ -14,6 +14,8 @@ namespace ARCarols.Scripts.Data.Base
         {
             string json = JsonUtility.ToJson(Data);
             
+            Debug.Log(json);
+            
             PlayerPrefs.SetString(json, DataKey);
             
             PlayerPrefs.Save();
@@ -22,6 +24,7 @@ namespace ARCarols.Scripts.Data.Base
         public T Load()
         {
             Data = PlayerPrefs.HasKey(DataKey) ? JsonUtility.FromJson<T>(DataKey) : CreatDefault();
+            Debug.Log(Data);
             return Data;
         }
 

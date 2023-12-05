@@ -39,7 +39,7 @@ namespace Ar
 
         public ArManager ChangeArState(ArState arState)
         {
-            if (_currentState == arState)
+            if (_currentState == arState && arState != ArState.Off)
             {
                 return this;
             }
