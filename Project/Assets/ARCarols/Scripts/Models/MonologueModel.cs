@@ -98,7 +98,10 @@ namespace ARCarols.Scripts.Models
 
             Debug.Log("textMonologue: " + monologue.Text);
 
-            CurrentMonologueIndex.Value = _currentMonologueIndex;
+            if (CurrentMonologueIndex.Value != _currentMonologueIndex)
+            {
+                CurrentMonologueIndex.Value = _currentMonologueIndex;
+            }
 
             _characterAnimationController.SetText(monologue.Text, monologue.AudioClip);
         }

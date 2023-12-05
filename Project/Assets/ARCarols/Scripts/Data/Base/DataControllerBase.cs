@@ -23,7 +23,7 @@ namespace ARCarols.Scripts.Data.Base
 
         public T Load()
         {
-            Data = PlayerPrefs.HasKey(DataKey) ? JsonUtility.FromJson<T>(DataKey) : CreatDefault();
+            Data = PlayerPrefs.HasKey(DataKey) ? JsonUtility.FromJson<T>(PlayerPrefs.GetString(DataKey)) : CreatDefault();
             Debug.Log(Data);
             return Data;
         }
