@@ -15,7 +15,7 @@ namespace ARCarols.Scripts.Presenters
         {
             base.ViewOpened();
 
-            _model.SubscribeOnCharacterSpawn();
+            _model.RefreshCharacterData();
             _model.CloseCharacterDialog();
 
             _view.MoveToCharacterActionOnClick.Subscribe(_ => _view.OpenNextView(_model.GetPanelForCharacterEvent()));
