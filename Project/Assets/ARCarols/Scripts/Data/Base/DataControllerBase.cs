@@ -14,14 +14,17 @@ namespace ARCarols.Scripts.Data.Base
         {
             string json = JsonUtility.ToJson(Data);
             
-            PlayerPrefs.SetString(json, DataKey);
+            Debug.Log(json);
+            
+            PlayerPrefs.SetString(DataKey, json);
             
             PlayerPrefs.Save();
         }
 
         public T Load()
         {
-            Data = PlayerPrefs.HasKey(DataKey) ? JsonUtility.FromJson<T>(DataKey) : CreatDefault();
+            Data = PlayerPrefs.HasKey(DataKey) ? JsonUtility.FromJson<T>(PlayerPrefs.GetString(DataKey)) : CreatDefault();
+            Debug.Log(Data);
             return Data;
         }
 

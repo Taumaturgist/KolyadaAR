@@ -4,6 +4,8 @@ namespace ARCarols.Scripts.UI.Enum
     {
         None = 0,
         CompleteSave = 1,
-        ArWarning = 2
+        ArWarning = 2,
+        CameraNotificationFirst,
+        CameraNotificationSecond
     }
 }

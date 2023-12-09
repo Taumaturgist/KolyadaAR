@@ -1,9 +1,12 @@
-﻿using ARCarols.Scripts.Data.Interface;
+﻿using System;
+using ARCarols.Scripts.Data.Interface;
+using UnityEngine;
 
 namespace ARCarols.Scripts.Data
 {
+    [Serializable]
     public class CharacterData : IData
     {
-        public bool IsCompletedMonologue;
+       [SerializeField] public bool IsCompletedMonologue;
     }
 }

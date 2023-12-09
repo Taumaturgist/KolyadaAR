@@ -12,7 +12,7 @@ namespace Ar
         public Action<CharacterAnimationController> OnCharacterSpawn
         {
             get => _characterPlaceOnSpace.OnCharacterSpawn;
-            set => _characterPlaceOnSpace.OnCharacterSpawn += value;
+            set => _characterPlaceOnSpace.OnCharacterSpawn = value;
         }
 
         [SerializeField] private ArFaceTrackingManager _arFaceTrackingManager;
@@ -39,7 +39,7 @@ namespace Ar
 
         public ArManager ChangeArState(ArState arState)
         {
-            if (_currentState == arState)
+            if (_currentState == arState && arState != ArState.Off)
             {
                 return this;
             }

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Ar;
 using ARCarols.Scripts.Character;
 using ARCarols.Scripts.Masks;
@@ -5,6 +7,7 @@ using ARCarols.Scripts.Models;
 using ARCarols.Scripts.Presenters;
 using ARCarols.Scripts.UI;
 using ARCarols.Scripts.UI.Configs;
+using ARCarols.Scripts.UI.Overlay;
 using ARCarols.Scripts.UI.Panels;
 using Screenshoter;
 using UnityEngine;
@@ -29,14 +32,16 @@ namespace EntryPoint
 
         [SerializeField] private ArManager _arManager;
 
-        private CurrentCharacterContainer _characterContainer; 
+        private CurrentCharacterContainer _characterContainer;
+
+        private CameraPermissionModel _cameraPermissionModel;
 
         private void Awake()
         {
             Application.targetFrameRate = 60;
 
             _characterContainer = new CurrentCharacterContainer();
-
+            
             InitConfig();
             
             InitManager();
@@ -44,9 +49,16 @@ namespace EntryPoint
             InitModule();
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
             _mainPanelManager.OpenPanel<MenuView>();
+
+            while (_cameraPermissionModel.CheckCameraPermission() == false)
+            {
+                yield return null;
+            }
+            
+            _arManager.gameObject.SetActive(true);
         }
 
         private void InitManager()
@@ -63,8 +75,10 @@ namespace EntryPoint
         
         private void InitModule()
         {
-            InitMonologueModule();
+            InitCameraPermissionModule();
             
+            InitMonologueModule();
+
             InitMainMenuModule();
 
             InitCharacterActionsModule();
@@ -84,6 +98,16 @@ namespace EntryPoint
             var view = _mainPanelManager.SudoGetPanel<MenuView>();
 
             var mainMenuPresenter = new MainMenuPresenter(mainMenuModel, view);
+        }
+        
+        private void InitCameraPermissionModule()
+        {
+             _cameraPermissionModel = new CameraPermissionModel();
+            
+            var view = _mainPanelManager.SudoGetPanel<CameraPermissionView>();
+
+            var cameraPermissionPresenter = new CameraPermissionPresenter(_cameraPermissionModel, view);
+            
         }
 
         private void InitMonologueModule()
