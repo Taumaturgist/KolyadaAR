@@ -7,28 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Brown_Mat
-    second: {fileID: 2100000, guid: 7933939e7702d0a43955f4385f7b8f71, type: 2}
+      name: Hair_Mat
+    second: {fileID: 2100000, guid: ad9516e7ae623af4e97fd955a5981d21, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grey1_Mat
-    second: {fileID: 2100000, guid: 2cd2f1c04d7415840b856890466d5996, type: 2}
+      name: Mask3_Mat
+    second: {fileID: 2100000, guid: 2206c51ad0edeca4289c8905a009e65a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grey2_Mat
-    second: {fileID: 2100000, guid: 986b580143f5b2c4085824da69e03600, type: 2}
+      name: Wood1_Mat
+    second: {fileID: 2100000, guid: 70c3e4e83ee4f3f4c89c303d9677e88b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grey_Mat
-    second: {fileID: 2100000, guid: 172d95a56e914e1498f800d7675f59d6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White_Mat
-    second: {fileID: 2100000, guid: f0644d24fc0294e4ebb16251ab6a4724, type: 2}
+      name: Wood3_Mat
+    second: {fileID: 2100000, guid: 39172a378e4819a47b4b8d2fe21da91d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
