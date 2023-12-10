@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _order: 0
+  _characterActionText: {fileID: 0}
   _buttonClose: {fileID: 4523854492236679445}
   _moveToSelphie: {fileID: 9122763942322947509}
   _moveToCharacterAction: {fileID: 319659177378385766}
@@ -629,7 +630,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0430\u0441\u0441\u043A\u0430\u0437\u0430\u0442\u044C \u043E \u0441\u0435\u0431\u0435"
+  m_text: "\u0420\u0430\u0441\u0441\u043A\u0430\u0436\u0438 \u043E \u0441\u0435\u0431\u0435!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f9d977a9ab68404fadf12d966006870, type: 2}
   m_sharedMaterial: {fileID: -3446088951293999570, guid: 3f9d977a9ab68404fadf12d966006870,
@@ -765,7 +766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u0434\u0435\u043B\u0430\u0442\u044C \u0441\u0435\u043B\u0444\u0438"
+  m_text: "\u0421\u0434\u0435\u043B\u0430\u0435\u043C \u0441\u0435\u043B\u0444\u0438!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f9d977a9ab68404fadf12d966006870, type: 2}
   m_sharedMaterial: {fileID: -3446088951293999570, guid: 3f9d977a9ab68404fadf12d966006870,

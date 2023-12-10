@@ -7,6 +7,8 @@ namespace ARCarols.Scripts.Models
 {
     public class CharacterActionsModel : ModelBase
     {
+        public string CharacterActionText => _characterContainer.CharacterConfig.CharacterActionText;
+        
         private ArManager _arManager;
 
         private CurrentCharacterContainer _characterContainer;

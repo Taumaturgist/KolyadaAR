@@ -11,6 +11,8 @@ namespace ARCarols.Scripts.Character.Config
 
         [SerializeField] private string _description;
 
+        [SerializeField] private string _characterActionText;
+
         [SerializeField] private CharacterAnimationController _characterPrefab;
         
         [SerializeField] private CharacterAnimationController _characterPrefabAr;
@@ -28,6 +30,8 @@ namespace ARCarols.Scripts.Character.Config
         public string Name => _name;
 
         public string Description => _description;
+
+        public string CharacterActionText => _characterActionText;
 
         public CharacterAnimationController IconPrefab => _characterPrefab;
 

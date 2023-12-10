@@ -18,8 +18,6 @@ namespace ARCarols.Scripts.Presenters
             base.ViewOpened();
 
             _model.ChangeArState();
-            
-            Debug.Log("VIEW OPEN");
 
             for (int i = 0; i < _model.MenuItems.Count; i++)
             {
