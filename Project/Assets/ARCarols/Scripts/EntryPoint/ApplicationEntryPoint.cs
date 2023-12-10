@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Ar;
 using ARCarols.Scripts.Character;
+using ARCarols.Scripts.Character.Config;
 using ARCarols.Scripts.Masks;
 using ARCarols.Scripts.Models;
 using ARCarols.Scripts.Presenters;
@@ -23,6 +24,8 @@ namespace EntryPoint
         [SerializeField] private MaskListConfig _maskListConfig;
 
         [SerializeField] private PopupTextConfig _popupTextConfig;
+
+        [SerializeField] private CharacterTextConfig _kolyadaSongsConfig;
         
 
         [Header("Managers")]
@@ -86,6 +89,8 @@ namespace EntryPoint
             InitMaskModule();
 
             InitSelfieModule();
+
+            InitKolyadaActionModule();
         }
 
         private void InitMainMenuModule()
@@ -144,6 +149,15 @@ namespace EntryPoint
             var view = _mainPanelManager.SudoGetPanel<SelfieView>();
 
             var selfiePresenter = new SelfiePresenters(selfieModel, view);
+        }
+
+        private void InitKolyadaActionModule()
+        {
+            var kolyadaActionModel = new KolyadaActionModel(_kolyadaSongsConfig, _arManager);
+            
+            var view = _mainPanelManager.SudoGetPanel<GrandfatherKolyadaActionView>();
+
+            var kolyadaActionPresenter = new KolyadaActionPresenter(kolyadaActionModel, view);
         }
     }
 }

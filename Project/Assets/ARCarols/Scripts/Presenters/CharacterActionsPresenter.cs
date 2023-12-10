@@ -15,13 +15,15 @@ namespace ARCarols.Scripts.Presenters
         {
             base.ViewOpened();
 
+            _model.OnCharacterOnScene.Subscribe(_ => _view.ActivateCharacterActions(_)).AddTo(_sessionDisposable);
+
             _model.RefreshCharacterData();
             
             _model.CloseCharacterDialog();
 
             _view.SetCharacterActionText(_model.CharacterActionText);
             
-            _view.MoveToCharacterActionOnClick.Subscribe(_ => _view.OpenNextView(_model.GetPanelForCharacterEvent()));
+            _view.MoveToCharacterActionOnClick.Subscribe(_ => _view.OpenNextView(_model.GetPanelForCharacterEvent())).AddTo(_sessionDisposable);
         }
 
 

@@ -1,5 +1,6 @@
-using DG.Tweening;
+using System;
 using PanelManager.Scripts.Panels;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ namespace ARCarols.Scripts.UI.Panels
 
         [SerializeField] private Button _startAction;
 
+        public IObservable<Unit> StartActionOnClick => _startAction.onClick.AsObservable();
+        
         public override PanelType PanelType => PanelType.Screen;
 
         public override bool RememberInHistory => false;
@@ -22,8 +25,9 @@ namespace ARCarols.Scripts.UI.Panels
             base.OnInitialize();
             
             _closeButton.onClick.AddListener(() => _panelManager.OpenPanel<CharacterActionsView>());
-            
         }
+        
+        
         
 
 

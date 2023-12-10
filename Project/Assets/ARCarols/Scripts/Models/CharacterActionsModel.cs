@@ -2,12 +2,15 @@ using Ar;
 using ARCarols.Scripts.Character;
 using PanelManager.Scripts.Interfaces;
 using Project.Scripts.Models.Base;
+using UniRx;
 
 namespace ARCarols.Scripts.Models
 {
     public class CharacterActionsModel : ModelBase
     {
         public string CharacterActionText => _characterContainer.CharacterConfig.CharacterActionText;
+
+        public ReactiveCommand<bool> OnCharacterOnScene = new();
         
         private ArManager _arManager;
 
@@ -20,10 +23,12 @@ namespace ARCarols.Scripts.Models
             _characterContainer = characterContainer;
         }
 
+        
         public void RefreshCharacterData()
         {
             _arManager.SetCharacterPrefab(_characterContainer.CharacterConfig)
                 .ChangeArState(ArState.CharacterState);
+            
             _arManager.OnCharacterSpawn += SetCharacterOnScene;
         }
 
@@ -35,6 +40,8 @@ namespace ARCarols.Scripts.Models
         private void SetCharacterOnScene(CharacterAnimationController character)
         {
             character.SetText(null, null);
+
+            OnCharacterOnScene.Execute(CheckCharacterOnScene());
         }
 
         public void CloseCharacterDialog()
@@ -47,11 +54,24 @@ namespace ARCarols.Scripts.Models
             {
                 character.SetText(null, null);
             }
+            
+            OnCharacterOnScene.Execute(CheckCharacterOnScene());
         }
 
         public IView GetPanelForCharacterEvent()
         {
             return _characterContainer.CharacterConfig.PanelForCharacterEvent;
         }
+        
+        private bool CheckCharacterOnScene()
+        {
+            if (_arManager.GetCurrentCharacter() != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }
