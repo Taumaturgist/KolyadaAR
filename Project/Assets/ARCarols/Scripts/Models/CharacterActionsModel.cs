@@ -20,8 +20,10 @@ namespace ARCarols.Scripts.Models
             _characterContainer = characterContainer;
         }
 
-        public void SubscribeOnCharacterSpawn()
+        public void RefreshCharacterData()
         {
+            _arManager.SetCharacterPrefab(_characterContainer.CharacterConfig)
+                .ChangeArState(ArState.CharacterState);
             _arManager.OnCharacterSpawn += SetCharacterOnScene;
         }
 
