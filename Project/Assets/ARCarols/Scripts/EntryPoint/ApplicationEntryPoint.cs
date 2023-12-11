@@ -54,8 +54,6 @@ namespace EntryPoint
 
         private IEnumerator Start()
         {
-            Permission.RequestUserPermission(Permission.ExternalStorageWrite);
-            
             _mainPanelManager.OpenPanel<MenuView>();
 
             while (_cameraPermissionModel.CheckCameraPermission() == false)

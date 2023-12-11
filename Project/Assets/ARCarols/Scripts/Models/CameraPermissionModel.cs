@@ -19,7 +19,7 @@ namespace ARCarols.Scripts.Models
         public void UpdateRequestCameraPermission()
         {
             _viewOpened = false;
-            Permission.RequestUserPermission(Permission.Camera);
+            Permission.RequestUserPermission("LAUNCH_CAPTURE_CONTENT_ACTIVITY_FOR_NOTE");
         }
 
 
@@ -46,7 +46,7 @@ namespace ARCarols.Scripts.Models
 
         public bool CheckCameraPermission()
         {
-            if (Permission.HasUserAuthorizedPermission(Permission.Camera) == false)
+            if (Permission.HasUserAuthorizedPermission("LAUNCH_CAPTURE_CONTENT_ACTIVITY_FOR_NOTE") == false)
             {
                 if (_viewOpened == false)
                 {
