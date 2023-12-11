@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Ar;
 using ARCarols.Scripts.Character;
@@ -12,6 +11,7 @@ using ARCarols.Scripts.UI.Overlay;
 using ARCarols.Scripts.UI.Panels;
 using Screenshoter;
 using UnityEngine;
+using UnityEngine.Android;
 
 namespace EntryPoint
 {
@@ -54,6 +54,8 @@ namespace EntryPoint
 
         private IEnumerator Start()
         {
+            Permission.RequestUserPermission(Permission.ExternalStorageWrite);
+            
             _mainPanelManager.OpenPanel<MenuView>();
 
             while (_cameraPermissionModel.CheckCameraPermission() == false)
