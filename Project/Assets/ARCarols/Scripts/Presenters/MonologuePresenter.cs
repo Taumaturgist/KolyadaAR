@@ -21,6 +21,10 @@ namespace ARCarols.Scripts.Presenters
             _model.RefreshData();
 
             _view.ValidateButtonState(_model.CurrentMonologueIndex.Value);
+            
+            _view.ValidateButtonPanelState(false);
+
+            _model.OnPlayerSpawned.Subscribe(_ => _view.ValidateButtonPanelState(_)).AddTo(_sessionDisposable);
 
             _model.OnEndMonologue.Subscribe(_ => _view.OpenCharacterView()).AddTo(_sessionDisposable);
 

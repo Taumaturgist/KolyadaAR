@@ -10,8 +10,6 @@ namespace ARCarols.Scripts.Character.Config
         [SerializeField] private List<string> _textList;
 
         [SerializeField] private List<CharacterTextProvider> _characterTextProviders;
-        
-        public List<string> TextList => _textList;
 
         public List<CharacterTextProvider> CharacterTextProviders => _characterTextProviders;
     }

@@ -13,6 +13,8 @@ namespace ARCarols.Scripts.Models
         public IntReactiveProperty CurrentMonologueIndex;
 
         public ReactiveCommand OnEndMonologue = new();
+        
+        public ReactiveCommand<bool> OnPlayerSpawned = new();
 
         private CharacterConfig _currentCharacterConfig;
 
@@ -88,7 +90,9 @@ namespace ARCarols.Scripts.Models
         private void SetCharacterOnScene(CharacterAnimationController characterAnimationController)
         {
             _characterAnimationController = characterAnimationController;
-
+            
+            OnPlayerSpawned?.Execute(true);
+            
             SetMonologueOnScene();
         }
 
@@ -110,8 +114,6 @@ namespace ARCarols.Scripts.Models
             }
 
             var monologue = _currentCharacterConfig.CharacterTextConfig.CharacterTextProviders[_currentMonologueIndex];
-
-            Debug.Log("textMonologue: " + monologue.Text);
 
             if (CurrentMonologueIndex.Value != _currentMonologueIndex)
             {
