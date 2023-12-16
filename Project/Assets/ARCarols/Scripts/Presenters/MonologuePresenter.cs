@@ -22,7 +22,7 @@ namespace ARCarols.Scripts.Presenters
 
             _view.ValidateButtonState(_model.CurrentMonologueIndex.Value);
             
-            _view.ValidateButtonPanelState(false);
+            _view.ValidateButtonPanelState(_model.CheckCharacterExist());
 
             _model.OnPlayerSpawned.Subscribe(_ => _view.ValidateButtonPanelState(_)).AddTo(_sessionDisposable);
 
