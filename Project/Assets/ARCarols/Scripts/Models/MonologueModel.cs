@@ -68,6 +68,17 @@ namespace ARCarols.Scripts.Models
             }
         }
 
+
+        public bool CheckCharacterExist()
+        {
+            if (_characterAnimationController != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
         public void EditMonologueIndex(int value)
         {
             if (_characterAnimationController == null)
