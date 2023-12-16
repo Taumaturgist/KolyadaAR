@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace ARCarols.Scripts.UI.Animation
 
         [SerializeField] private AudioSource _audioSource;
 
+        public event Action OnCompleteAnimation;
+        
         public bool IsTextWriting => _isTextWriting;
        
         private const float TYPING_SPEED_CONST = 0.3f;
@@ -47,6 +50,8 @@ namespace ARCarols.Scripts.UI.Animation
             StopAllCoroutines();
             
             _textComponent.text = _writingText;
+            
+            OnCompleteAnimation?.Invoke();
         }
         
         private IEnumerator TypeText(string fullText, float speed)
@@ -64,6 +69,8 @@ namespace ARCarols.Scripts.UI.Animation
             _isTextWriting = false;
             
             _textComponent.text = _writingText;
+            
+            OnCompleteAnimation?.Invoke();
         }
     }
     

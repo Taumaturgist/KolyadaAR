@@ -36,13 +36,7 @@ namespace ARCarols.Scripts.Models
         {
             _arManager.OnCharacterSpawn -= SetCharacterOnScene;
         }
-
-        private void SetCharacterOnScene(CharacterAnimationController character)
-        {
-            character.SetText(null, null);
-
-            OnCharacterOnScene.Execute(CheckCharacterOnScene());
-        }
+        
 
         public void CloseCharacterDialog()
         {
@@ -63,7 +57,7 @@ namespace ARCarols.Scripts.Models
             return _characterContainer.CharacterConfig.PanelForCharacterEvent;
         }
         
-        private bool CheckCharacterOnScene()
+        public bool CheckCharacterOnScene()
         {
             if (_arManager.GetCurrentCharacter() != null)
             {
@@ -71,6 +65,14 @@ namespace ARCarols.Scripts.Models
             }
 
             return false;
+        }
+        
+        
+        private void SetCharacterOnScene(CharacterAnimationController character)
+        {
+            character.SetText(null, null);
+
+            OnCharacterOnScene.Execute(CheckCharacterOnScene());
         }
 
     }

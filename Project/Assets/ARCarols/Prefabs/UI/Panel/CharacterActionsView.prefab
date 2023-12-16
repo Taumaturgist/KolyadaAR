@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _order: 0
-  _characterActionText: {fileID: 0}
+  _characterActionText: {fileID: 2787037578922970396}
   _buttonClose: {fileID: 4523854492236679445}
   _moveToSelphie: {fileID: 9122763942322947509}
   _moveToCharacterAction: {fileID: 319659177378385766}
