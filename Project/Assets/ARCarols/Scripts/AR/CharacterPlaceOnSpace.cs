@@ -25,7 +25,12 @@ namespace Ar
 
         [SerializeField] private ARRaycastManager _raycastManager;
 
+
+        [SerializeField] private GameObject _planePrefab;
+
         [SerializeField] private Camera _arCamera;
+        
+        private ARPlaneManager _arPlaneManager;
 
         private CharacterAnimationController _anchorPrefab;
 
@@ -77,6 +82,17 @@ namespace Ar
 
         private IEnumerator SpawnCharacterCoroutine()
         {
+            if (_arPlaneManager != null)
+            {
+                ClearArPlaneManager();
+            }
+            
+            _arPlaneManager = gameObject.AddComponent<ARPlaneManager>();
+            
+            _arPlaneManager.planePrefab = _planePrefab;
+
+            _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.Horizontal;
+            
             _panelManager?.OpenPanel<ArNotificationView, PopupEnum>(PopupEnum.ArWarning);
 
             List<ARRaycastHit> hits = new List<ARRaycastHit>();
@@ -98,9 +114,23 @@ namespace Ar
                 yield return null;
             }
 
+            ClearArPlaneManager();
+
             _panelManager?.ClosePanel<ArNotificationView>();
 
             OnCharacterSpawn?.Invoke(_currentCharacter);
+        }
+
+        private void ClearArPlaneManager()
+        {
+            _arPlaneManager.planePrefab = null;
+
+            foreach (var trackable in _arPlaneManager.trackables)
+            {
+                DestroyImmediate(trackable.gameObject);
+            }
+            
+            DestroyImmediate(_arPlaneManager);
         }
     }
 }
