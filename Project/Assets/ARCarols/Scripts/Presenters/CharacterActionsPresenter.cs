@@ -21,6 +21,8 @@ namespace ARCarols.Scripts.Presenters
             
             _model.CloseCharacterDialog();
 
+            _view.ActivateCharacterActions(_model.CheckCharacterOnScene());
+
             _view.SetCharacterActionText(_model.CharacterActionText);
             
             _view.MoveToCharacterActionOnClick.Subscribe(_ => _view.OpenNextView(_model.GetPanelForCharacterEvent())).AddTo(_sessionDisposable);
