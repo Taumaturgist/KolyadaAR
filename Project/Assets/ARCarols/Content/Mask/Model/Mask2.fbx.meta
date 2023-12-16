@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c3ff5c53074caa4d831d36b5e9bb5a1
+guid: 7435ca0094bc45146a28e57093338c69
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "\u041C\u0430\u0441\u043A\u04302\u0420\u0435\u0444.001"
-    second: {fileID: 2100000, guid: 8ddbe91cec7727e40a965ffbe8b8b7dc, type: 2}
+      name: Mask2_Mat
+    second: {fileID: 2100000, guid: 90285d9de9f39ea41b316d9e54f4ae2f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
