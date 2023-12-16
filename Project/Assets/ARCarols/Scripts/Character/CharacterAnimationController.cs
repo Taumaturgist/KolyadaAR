@@ -23,7 +23,7 @@ namespace ARCarols.Scripts.Character
         {
             _textCharacter.SetActive(!string.IsNullOrEmpty(text));
 
-            _typingTextAnimation.OnCompleteAnimation += OnCompleteAnimation;
+            _typingTextAnimation.OnCompleteAnimation += OnCompleteAnimationText;
             
             if (text != null)
             {
@@ -41,10 +41,12 @@ namespace ARCarols.Scripts.Character
             
         }
 
-        private void OnCompleteAnimation()
+        private void OnCompleteAnimationText()
         {
-            _typingTextAnimation.OnCompleteAnimation -= OnCompleteAnimation;
+            _typingTextAnimation.OnCompleteAnimation -= OnCompleteAnimationText;
             _animator.SetTrigger(OnIdle);
+            _animator.SetBool(IsTalk, false);
+            _animator.SetBool(IsDance, false);
         }
 
         public void SkipAnimation()
