@@ -14,6 +14,8 @@ namespace ARCarols.Scripts.UI.Panels
 
         [SerializeField] private Button _buttonNextView;
 
+        [SerializeField] private GameObject _buttonPanel;
+
         public IObservable<Unit> PreviousButtonOnClick => _buttonPreviousView.onClick.AsObservable();
         public IObservable<Unit> NextButtonOnClick => _buttonNextView.onClick.AsObservable();
 
@@ -30,6 +32,11 @@ namespace ARCarols.Scripts.UI.Panels
         public void ValidateButtonState(int currentIndex)
         {
             _buttonPreviousView.gameObject.SetActive(currentIndex != 0);
+        }
+
+        public void ValidateButtonPanelState(bool isCharacterSpawned)
+        {
+            _buttonPanel.SetActive(isCharacterSpawned);
         }
 
         public void OpenCharacterView()

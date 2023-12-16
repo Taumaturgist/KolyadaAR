@@ -17,7 +17,7 @@ MonoBehaviour:
   _characterActionText: "\u0421\u043F\u043E\u0439 \u043A\u043E\u043B\u044F\u0434\u043A\u0443!"
   _characterPrefab: {fileID: 1247270889259755225, guid: d45290613806ebc478a03ad4c7d1778b,
     type: 3}
-  _characterPrefabAr: {fileID: 5193110423414362546, guid: 5eff2232322041e42a79bd01cf488272,
+  _characterPrefabAr: {fileID: 8168127776103509788, guid: 5eff2232322041e42a79bd01cf488272,
     type: 3}
   _characterTextConfig: {fileID: 11400000, guid: d08c5643e659bf3449b98a44bd7ba2e8,
     type: 2}

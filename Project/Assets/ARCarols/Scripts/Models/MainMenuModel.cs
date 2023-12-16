@@ -16,6 +16,8 @@ namespace ARCarols.Scripts.Models
     {
         public List<MenuItemBase> MenuItems => _menuItemsConfig.MenuItems;
 
+        public int CurrentIndex => _currentItemIndex;
+
         private MenuItemsConfig _menuItemsConfig;
 
         private CurrentCharacterContainer _characterContainer;
@@ -26,6 +28,8 @@ namespace ARCarols.Scripts.Models
 
         private IView _panelForCompleteMonologueCharacter;
 
+        private int _currentItemIndex;
+        
         public MainMenuModel(MenuItemsConfig menuItemsConfig, CurrentCharacterContainer characterContainer,
             ArManager arManager, IView panelForCompleteMonologueCharacter)
         {
@@ -45,6 +49,7 @@ namespace ARCarols.Scripts.Models
 
         public void SetCurrentMenuItem(int index)
         {
+            _currentItemIndex = index;
             _currentItem = MenuItems[index];
         }
 

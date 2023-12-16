@@ -50,46 +50,46 @@ MonoBehaviour:
   - Text: "\u0422\u044B \u043D\u0435 \u0441\u0435\u0440\u0447\u0430\u0439, \u0434\u0430
       \u0442\u043E\u043B\u044C\u043A\u043E \u0440\u0430\u0441\u043A\u043E\u043B\u0434\u043E\u0432\u0430\u0442\u044C
       \u044F \u0442\u0435\u0431\u044F \u043D\u0435 \u0441\u0443\u043C\u0435\u044E"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: a0328a659b9b59348ab89c9f128f2c65, type: 3}
   - Text: "\u0427\u0443\u044E! \u0427\u0443\u044E! \u0427\u0443\u044E! \u0416\u0434\u0451\u0442
       \u0442\u0435\u0431\u044F \u0443\u0434\u0430\u0447\u0430 "
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: 45a651570203c434a947fb54432492dd, type: 3}
   - Text: "\u0418\u0448\u044C \u0447\u0435\u0433\u043E \u0437\u0430\u0445\u043E\u0442\u0435\u043B\u043E\u0441\u044C!
       \u041D\u0443\u0436\u043D\u043E \u0431\u0443\u0434\u0435\u0442 \u043C\u043D\u043E\u0433\u043E
       \u043F\u043E\u0442\u0440\u0443\u0434\u0438\u0442\u044C\u0441\u044F"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: 39969fa4f2e8de74fba12ad2d5d1c800, type: 3}
   - Text: "\u0422\u0430\u043A \u0434\u0435\u0440\u0436\u0430\u0442\u044C! \u041F\u0440\u044F\u043C
       \u043A\u0430\u043A \u044F \u0432 \u0442\u0432\u043E\u0438 \u0433\u043E\u0434\u044B"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: 89ea6c86b5cd05140b42e54ba2fdec1a, type: 3}
   - Text: "\u0413\u043E\u0432\u043E\u0440\u044F\u0442, \u0432\u0430\u043C \u0441\u0447\u0430\u0441\u0442\u044C\u0435
       \u043F\u0440\u0438\u0432\u0430\u043B\u0438\u043B\u043E"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: 3dd0f10a42be8ee4c824e2a890c7d316, type: 3}
   - Text: "\u041E\u0441\u0442\u0435\u0440\u0435\u0433\u0430\u0439\u0442\u0435\u0441\u044C
       \u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0438, \u0437\u043E\u043B\u043E\u0442\u0435\u043D\u044C\u043A\u0438\u0435
       \u043C\u043E\u0438"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: 7c458322740fcc944a69561e55e09664, type: 3}
   - Text: "\u0414\u0430 \u0432\u0440\u043E\u0434\u0435 \u043D\u0435\u0442, \u0445\u043E\u0442\u044F
       \u0443\u0436 \u043B\u0435\u0442 200 \u043D\u0435 \u043A\u043E\u043B\u0434\u043E\u0432\u0430\u043B\u0430"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: df6b3041a6f606b44927d140802839e2, type: 3}
   - Text: "\u0412\u0441\u0451 \u0447\u0442\u043E \u0443\u0433\u043E\u0434\u043D\u043E
       \u043C\u043E\u0436\u0435\u0442 \u0441\u043B\u0443\u0447\u0438\u0442\u044C\u0441\u044F,
       \u0435\u0441\u043B\u0438 \u0431\u043B\u044E\u0434\u0446\u0435 \u0432 \u043D\u0435\u0443\u043C\u0435\u043B\u044B\u0435
       \u0440\u0443\u043A\u0438 \u043F\u043E\u043F\u0430\u0434\u0451\u0442. \u0422\u0430\u043A
       \u0438 \u043E\u043A\u043E\u0447\u0443\u0440\u0438\u0442\u044C\u0441\u044F \u043D\u0435\u0434\u043E\u043B\u0433\u043E"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: 1d652550be2d0c24da4b6371e63f1187, type: 3}
   - Text: "\u041B\u0443\u0447\u0448\u0435 \u043F\u043E\u0434\u043E\u0436\u0434\u0430\u0442\u044C
       \u043F\u043E\u043A\u0430 \u043E\u0442 \u0433\u0440\u0435\u0445\u0430 \u043F\u043E\u0434\u0430\u043B\u044C\u0448\u0435"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: b30fc85a72e3a404092d5c0d2aa5abd2, type: 3}
   - Text: "\u041A\u0430\u043A \u043C\u0435\u0447\u0442\u0430\u043B\u043E\u0441\u044F,
       \u0442\u0430\u043A \u0438 \u0441\u0442\u0430\u043B\u043E\u0441\u044F"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: b01480abbb2e02b409bb87ab50e084c9, type: 3}
   - Text: "\u0423\u043D\u043E\u0441\u0438 \u0441\u043A\u043E\u0440\u0435\u0435 \u043D\u043E\u0433\u0438!"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: 356252fb200bfd3439f3ea941ea8e3b9, type: 3}
   - Text: "\u041D\u0430 \u0441\u0438\u043B\u0443 \u0441\u0432\u043E\u044E \u043D\u0435
       \u043D\u0430\u0434\u0435\u0439\u0441\u044F. \u0422\u044B \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u043E,
       \u0430 \u044F \u043A\u043E\u043B\u0434\u043E\u0432\u0441\u0442\u0432\u043E
       \u2014 \u043F\u043E\u043C\u043E\u0433\u0443 \u0442\u0435\u0431\u0435"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: fa9149f8a096d9642ae267d4783c5311, type: 3}
   - Text: "\u0414\u0435\u043B\u043E \u0432\u0430\u0448\u0435 \u043F\u0440\u043E\u0441\u0442\u043E\u0435
       \u2014 \u0441\u043E\u0432\u0441\u0435\u043C \u043F\u0443\u0441\u0442\u043E\u0435"
-    AudioClip: {fileID: 8300000, guid: 68d840735dda4664bb0be6e7dbff93cb, type: 3}
+    AudioClip: {fileID: 8300000, guid: 12ddc3779fb690f4988678eeee09c66c, type: 3}

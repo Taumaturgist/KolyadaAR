@@ -63,6 +63,11 @@ namespace ARCarols.Scripts.UI.Panels
             return createdMenuItem;
         }
 
+        public void SetMenuItem(int item)
+        {
+            _simpleScrollSnap.GoToPanel(item);
+        }
+
         public void ClearMenuItem()
         {
             for (int i = 0; i < _menuItemsView.Count; i++)

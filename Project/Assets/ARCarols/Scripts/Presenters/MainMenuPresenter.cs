@@ -38,7 +38,7 @@ namespace ARCarols.Scripts.Presenters
 
             _view.ButtonCloseApplicationOnClick.Subscribe(_ => _model.CloseApplication()).AddTo(_sessionDisposable);
 
-            SetCurrent(0);
+            _view.SetMenuItem(_model.CurrentIndex);
 
         }
         
