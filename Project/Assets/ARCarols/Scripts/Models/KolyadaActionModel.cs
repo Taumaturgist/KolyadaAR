@@ -29,7 +29,7 @@ namespace ARCarols.Scripts.Models
             if (character.IsTextWriting)
             {
                 character.SkipAnimation();
-                
+
                 return;
             }
             
@@ -40,7 +40,7 @@ namespace ARCarols.Scripts.Models
             
             var currentSongs = _songs[Random.Range(0, _songs.Count)];
             
-            character.SetText(currentSongs.Text, currentSongs.AudioClip);
+            character.SetText(currentSongs.Text, currentSongs.AudioClip, true);
 
             _songs.Remove(currentSongs);
         }
