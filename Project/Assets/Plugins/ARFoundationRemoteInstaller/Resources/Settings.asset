@@ -109,6 +109,7 @@ MonoBehaviour:
     - 2021.3.0
     - 2022.1.0
     - 2022.2.12
+    - 2022.3.11
     enablePluginInAllBuildTargets: 0
     warnNonEmbeddedImageLibrary: 1
     warnNativeCameraTrackingIsNotSupported: 1
