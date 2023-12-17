@@ -15,4 +15,4 @@ MonoBehaviour:
   _prefab: {fileID: 5618607885387247516, guid: 38ee59fc7ce90b948848d19a75391680, type: 3}
   _id: 2
   _maskName: Mask 3
-  _icon: {fileID: 21300000, guid: e1ed287cc878dc2419c6d16eec5b4286, type: 3}
+  _icon: {fileID: 21300000, guid: c1b2e7d2edd3d0a4288e84da88f61cec, type: 3}
