@@ -208,7 +208,7 @@ MonoBehaviour:
   _popupTextConfig: {fileID: 11400000, guid: e611b1ba2d72dce4494c315f32a92a92, type: 2}
   _notificationText: {fileID: 2655579990054260067}
   _backgroundText: {fileID: 8576167623750413022}
-  _animationDuration: 1.5
+  _animationDuration: 3
   _delay: 0.5
 --- !u!1 &7399063579562114703
 GameObject:
