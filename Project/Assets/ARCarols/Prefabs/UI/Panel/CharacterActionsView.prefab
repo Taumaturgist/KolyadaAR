@@ -33,7 +33,6 @@ RectTransform:
   m_Children:
   - {fileID: 3230464376116130199}
   m_Father: {fileID: 3424095197079144447}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -153,7 +152,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4624485295630471303}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -289,7 +287,6 @@ RectTransform:
   m_Children:
   - {fileID: 3424095197079144447}
   m_Father: {fileID: 5425538170363209116}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -327,7 +324,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1663278641055792043}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -464,7 +460,6 @@ RectTransform:
   - {fileID: 8507556374625744950}
   - {fileID: 977864608507716652}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -519,7 +514,6 @@ RectTransform:
   m_Children:
   - {fileID: 5425538170363209116}
   m_Father: {fileID: 4406601245298413500}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -557,7 +551,6 @@ RectTransform:
   - {fileID: 7422233377655449111}
   - {fileID: 3971275085243201599}
   m_Father: {fileID: 977864608507716652}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -595,7 +588,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8479509382334628933}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -731,7 +723,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7832625759089100167}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -869,7 +860,6 @@ RectTransform:
   m_Children:
   - {fileID: 8003539199214011588}
   m_Father: {fileID: 3424095197079144447}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -989,7 +979,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4406601245298413500}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1067,7 +1056,6 @@ RectTransform:
   m_Children:
   - {fileID: 7514157987669019952}
   m_Father: {fileID: 3424095197079144447}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1189,7 +1177,6 @@ RectTransform:
   m_Children:
   - {fileID: 7356973300052791243}
   m_Father: {fileID: 3424095197079144447}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1314,7 +1301,6 @@ RectTransform:
   - {fileID: 8479509382334628933}
   - {fileID: 4624485295630471303}
   m_Father: {fileID: 3971275085243201599}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1391,6 +1377,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5425538170363209116}
     m_Modifications:
+    - target: {fileID: 3266898968660280496, guid: 5129338ef98bf5a42918097f312ebc80,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d426a5cb1eed6a45bca632609336b5a,
+        type: 3}
     - target: {fileID: 4467305752700052945, guid: 5129338ef98bf5a42918097f312ebc80,
         type: 3}
       propertyPath: m_Pivot.x
