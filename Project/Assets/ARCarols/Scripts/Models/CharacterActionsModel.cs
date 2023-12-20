@@ -47,6 +47,7 @@ namespace ARCarols.Scripts.Models
             if (character != null)
             {
                 character.SetText(null, null);
+                character.SkipAnimation();
             }
             
             OnCharacterOnScene.Execute(CheckCharacterOnScene());
